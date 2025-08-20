@@ -2,15 +2,15 @@
 
 export default function PRPPricing() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-primary-600 font-medium tracking-wider uppercase">Investment</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
+    <section className="py-16 sm:py-20 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">Investment</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Simple, Transparent
             <span className="gradient-text"> Pricing</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto">
             Invest in natural rejuvenation with our competitive PRP pricing
           </p>
         </div>
@@ -18,8 +18,8 @@ export default function PRPPricing() {
         {/* Hair Treatment Packages */}
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-center mb-8">Hair Restoration Packages</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="space-y-6">
                 <div>
                   <p className="text-sm text-neutral-600 mb-2">Single Hair Session</p>
@@ -47,12 +47,10 @@ export default function PRPPricing() {
                   </li>
                 </ul>
                 <a
-                  href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#assessment"
                   className="block text-center bg-neutral-100 text-neutral-700 px-6 py-3 rounded-full font-medium hover:bg-neutral-200 transition-all duration-300"
                 >
-                  Book Single
+                  Start Assessment
                 </a>
               </div>
             </div>
@@ -61,7 +59,7 @@ export default function PRPPricing() {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium z-10">
                 POPULAR
               </div>
-              <div className="relative bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 shadow-xl border-2 border-primary-300 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <div className="relative bg-gradient-to-br from-primary-50 to-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-xl border-2 border-primary-300 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                 <div className="space-y-6">
                   <div>
                     <p className="text-sm text-primary-600 font-medium mb-2">3 Hair Sessions</p>
@@ -103,7 +101,7 @@ export default function PRPPricing() {
               </div>
             </div>
 
-            <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="space-y-6">
                 <div>
                   <p className="text-sm text-neutral-600 mb-2">6 Hair Sessions</p>
@@ -131,12 +129,10 @@ export default function PRPPricing() {
                   </li>
                 </ul>
                 <a
-                  href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#assessment"
                   className="block text-center bg-neutral-100 text-neutral-700 px-6 py-3 rounded-full font-medium hover:bg-neutral-200 transition-all duration-300"
                 >
-                  Learn More
+                  Start Assessment
                 </a>
               </div>
             </div>
@@ -146,8 +142,8 @@ export default function PRPPricing() {
         {/* Facial Treatment Packages */}
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-center mb-8">Facial Rejuvenation Packages</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="space-y-6">
                 <div>
                   <p className="text-sm text-neutral-600 mb-2">Full Face + Eyes</p>
@@ -189,7 +185,7 @@ export default function PRPPricing() {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium z-10">
                 RECOMMENDED
               </div>
-              <div className="relative bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 shadow-xl border-2 border-primary-300 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <div className="relative bg-gradient-to-br from-primary-50 to-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-xl border-2 border-primary-300 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                 <div className="space-y-6">
                   <div>
                     <p className="text-sm text-primary-600 font-medium mb-2">3 Face Sessions</p>
@@ -231,7 +227,7 @@ export default function PRPPricing() {
               </div>
             </div>
 
-            <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="space-y-6">
                 <div>
                   <p className="text-sm text-neutral-600 mb-2">6 Face Sessions</p>
@@ -259,12 +255,10 @@ export default function PRPPricing() {
                   </li>
                 </ul>
                 <a
-                  href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#assessment"
                   className="block text-center bg-neutral-100 text-neutral-700 px-6 py-3 rounded-full font-medium hover:bg-neutral-200 transition-all duration-300"
                 >
-                  Learn More
+                  Start Assessment
                 </a>
               </div>
             </div>

@@ -42,107 +42,152 @@ export default function PRPResults() {
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8">
-          <div className="flex justify-center gap-2 mb-8">
+        {/* Elegant Tab Switcher */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex bg-neutral-100 p-1 rounded-full">
             <button
               onClick={() => setActiveTab('hair')}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
+              className={`relative px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
                 activeTab === 'hair'
-                  ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg'
-                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                  ? 'bg-white text-primary-600 shadow-lg'
+                  : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
-              Hair Restoration
+              {activeTab === 'hair' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-primary-600/10 rounded-full"></div>
+              )}
+              <span className="relative">💇‍♂️ Hair</span>
             </button>
             <button
               onClick={() => setActiveTab('face')}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
+              className={`relative px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
                 activeTab === 'face'
-                  ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg'
-                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                  ? 'bg-white text-primary-600 shadow-lg'
+                  : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
-              Facial Rejuvenation
+              {activeTab === 'face' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-primary-600/10 rounded-full"></div>
+              )}
+              <span className="relative">✨ Face</span>
             </button>
           </div>
+        </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden">
+
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center p-6 sm:p-8">
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold">{results[activeTab as keyof typeof results].title}</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold">{results[activeTab as keyof typeof results].title}</h3>
               
               <div className="space-y-4">
-                <h4 className="font-semibold text-lg">Expected Timeline:</h4>
+                <h4 className="font-semibold text-base sm:text-lg">Expected Timeline:</h4>
                 {results[activeTab as keyof typeof results].timeline.map((item, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="w-24 font-semibold text-primary-600">{item.time}</div>
-                    <div className="flex-1 flex items-center">
-                      <div className="w-3 h-3 bg-primary-500 rounded-full mr-3"></div>
+                  <div key={index} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0">
+                    <div className="flex items-center sm:w-24">
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-primary-500 rounded-full mr-2 sm:mr-0"></div>
+                      <span className="font-semibold text-sm sm:text-base text-primary-600 sm:ml-2">{item.time}</span>
+                    </div>
+                    <div className="hidden sm:flex flex-1 items-center px-3">
                       <div className="flex-1 h-0.5 bg-primary-200"></div>
                     </div>
-                    <div className="flex-1 ml-3 text-neutral-700">{item.result}</div>
+                    <div className="flex-1 pl-4 sm:pl-0 text-sm sm:text-base text-neutral-700">{item.result}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-6 border-t">
                 <div className="text-center">
-                  <p className="text-3xl font-bold gradient-text">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-text">
                     {results[activeTab as keyof typeof results].stats.improvement}
                   </p>
-                  <p className="text-sm text-neutral-600">Improvement</p>
+                  <p className="text-xs sm:text-sm text-neutral-600">Improvement</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold gradient-text">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-text">
                     {activeTab === 'hair' 
                       ? (results.hair.stats as any).density 
                       : (results.face.stats as any).glow}
                   </p>
-                  <p className="text-sm text-neutral-600">
+                  <p className="text-xs sm:text-sm text-neutral-600">
                     {activeTab === 'hair' ? 'Hair Density' : 'Skin Glow'}
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold gradient-text">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-text">
                     {results[activeTab as keyof typeof results].stats.satisfaction}
                   </p>
-                  <p className="text-sm text-neutral-600">Satisfaction</p>
+                  <p className="text-xs sm:text-sm text-neutral-600">Satisfaction</p>
                 </div>
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src={activeTab === 'hair' 
-                  ? 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=400&fit=crop'
-                  : 'https://images.unsplash.com/photo-1556228852-5647db99e8b6?w=600&h=400&fit=crop'
-                }
-                alt={`PRP ${activeTab} results`}
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-sm font-medium mb-1">Individual Results May Vary</p>
-                <p className="text-xs opacity-90">Results shown after complete treatment series</p>
+            <div className="relative order-first lg:order-last">
+              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
+                <div className="aspect-[4/3] sm:aspect-[3/2]">
+                  <img
+                    src={activeTab === 'hair' 
+                      ? 'https://images.unsplash.com/photo-1559058789-672da06263d4?w=600&h=400&fit=crop'
+                      : 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop'
+                    }
+                    alt={`PRP ${activeTab} results`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="text-sm font-medium mb-1">Individual Results May Vary</p>
+                  <p className="text-xs opacity-90">Results shown after complete treatment series</p>
+                </div>
+              </div>
+              
+              {/* Quick Switch Hint */}
+              <div className="mt-4 text-center">
+                <p className="text-xs text-neutral-500">
+                  Interested in {activeTab === 'hair' ? 'facial' : 'hair'} results? 
+                  <button 
+                    onClick={() => setActiveTab(activeTab === 'hair' ? 'face' : 'hair')}
+                    className="text-primary-600 hover:text-primary-700 font-medium ml-1"
+                  >
+                    View {activeTab === 'hair' ? 'Face' : 'Hair'} Results →
+                  </button>
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-lg text-neutral-600 mb-6">
-            Ready to start your transformation journey?
-          </p>
-          <a
-            href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            Book Your PRP Consultation
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+        <div className="mt-10 sm:mt-12">
+          <div className="bg-gradient-to-r from-primary-50 to-white rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto text-center">
+            <p className="text-base sm:text-lg text-neutral-700 font-medium mb-2">
+              {activeTab === 'hair' 
+                ? 'Ready to restore your hair\'s natural fullness?'
+                : 'Ready for naturally radiant, younger-looking skin?'
+              }
+            </p>
+            <p className="text-sm text-neutral-600 mb-6">
+              See if you\'re a good candidate with our quick assessment
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="#assessment"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                Take {activeTab === 'hair' ? 'Hair' : 'Facial'} Assessment
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <a
+                href="https://www.treatwell.co.uk/place/eskeen-clinic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-primary-50 transition-all duration-300"
+              >
+                Book Consultation
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
+import ToolsShowcase from '@/components/ToolsShowcase';
 import About from '@/components/About';
 import ClinicGallery from '@/components/ClinicGallery';
 import Testimonials from '@/components/Testimonials';
@@ -27,6 +28,7 @@ export default function Home() {
       <main className="overflow-hidden">
         <Hero />
         <Services />
+        <ToolsShowcase />
         <About />
         <ClinicGallery />
         <Testimonials />

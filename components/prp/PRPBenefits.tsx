@@ -1,7 +1,5 @@
 'use client';
 
-import PRPAssessment from './PRPAssessment';
-
 export default function PRPBenefits() {
   const hairBenefits = [
     { title: 'Stimulates Hair Follicles', description: 'Activates dormant follicles to promote new growth' },
@@ -18,23 +16,23 @@ export default function PRPBenefits() {
   ];
 
   return (
-    <section id="benefits" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-primary-600 font-medium tracking-wider uppercase">Why Choose PRP</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
+    <section id="benefits" className="py-16 sm:py-20 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">Why Choose PRP</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Natural Treatment,
             <span className="gradient-text"> Remarkable Results</span>
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div className="bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 shadow-xl">
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center mr-4">
-                <span className="text-3xl">💇‍♂️</span>
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16">
+          <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                <span className="text-2xl sm:text-3xl">💇‍♂️</span>
               </div>
-              <h3 className="text-2xl font-bold">Hair Restoration Benefits</h3>
+              <h3 className="text-xl sm:text-2xl font-bold">Hair Restoration Benefits</h3>
             </div>
             
             <div className="space-y-4">
@@ -58,12 +56,12 @@ export default function PRPBenefits() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 shadow-xl">
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center mr-4">
-                <span className="text-3xl">✨</span>
+          <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                <span className="text-2xl sm:text-3xl">✨</span>
               </div>
-              <h3 className="text-2xl font-bold">Facial Rejuvenation Benefits</h3>
+              <h3 className="text-xl sm:text-2xl font-bold">Facial Rejuvenation Benefits</h3>
             </div>
             
             <div className="space-y-4">
@@ -88,13 +86,8 @@ export default function PRPBenefits() {
           </div>
         </div>
 
-        <div className="mb-16" id="assessment">
-          <h3 className="text-2xl font-bold text-center mb-8">Find Your Perfect PRP Treatment</h3>
-          <PRPAssessment />
-        </div>
-
-        <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+        <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">100%</div>
               <p className="text-primary-100">Natural Treatment</p>

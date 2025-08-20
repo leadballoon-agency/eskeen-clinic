@@ -29,42 +29,42 @@ export default function PRPProcess() {
   ];
 
   return (
-    <section className="py-24 bg-neutral-50">
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-primary-600 font-medium tracking-wider uppercase">The Process</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
+    <section className="py-16 sm:py-20 md:py-24 bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">The Process</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Simple, Safe,
             <span className="gradient-text"> Scientific</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto">
             PRP therapy is a quick, minimally invasive procedure that takes less than an hour
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent z-0" />
               )}
               
-              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 z-10">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-4xl font-bold text-primary-200">{step.number}</span>
-                  <span className="text-3xl">{step.icon}</span>
+              <div className="relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 z-10">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <span className="text-3xl sm:text-4xl font-bold text-primary-200">{step.number}</span>
+                  <span className="text-2xl sm:text-3xl">{step.icon}</span>
                 </div>
-                <h3 className="font-bold text-lg mb-2">{step.title}</h3>
-                <p className="text-neutral-600 text-sm">{step.description}</p>
+                <h3 className="font-bold text-base sm:text-lg mb-2">{step.title}</h3>
+                <p className="text-neutral-600 text-xs sm:text-sm">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="mt-12 sm:mt-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4">What Makes PRP Special?</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">What Makes PRP Special?</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-primary-200 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -92,9 +92,9 @@ export default function PRPProcess() {
                 </li>
               </ul>
             </div>
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
-              <h4 className="font-bold text-lg mb-3">Recovery Timeline:</h4>
-              <ul className="space-y-2 text-sm">
+            <div className="bg-white/10 backdrop-blur rounded-xl sm:rounded-2xl p-4 sm:p-6">
+              <h4 className="font-bold text-base sm:text-lg mb-3">Recovery Timeline:</h4>
+              <ul className="space-y-2 text-xs sm:text-sm">
                 <li className="flex items-center">
                   <span className="font-semibold mr-2">Day 1:</span> Mild redness at injection sites
                 </li>

@@ -6,3 +6,4 @@ export { default as PRPPricing } from './PRPPricing';
 export { default as PRPFAQ } from './PRPFAQ';
 export { default as PRPCTA } from './PRPCTA';
 export { default as PRPAssessment } from './PRPAssessment';
+export { default as PRPAssessmentSection } from './PRPAssessmentSection';

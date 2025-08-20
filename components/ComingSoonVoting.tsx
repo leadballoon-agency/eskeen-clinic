@@ -90,18 +90,18 @@ export default function ComingSoonVoting({ onClose }: ComingSoonVotingProps) {
   )[0];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
+      <div className="bg-white rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl">
         {/* Header */}
-        <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-6 text-white rounded-t-3xl">
+        <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-4 sm:p-6 text-white rounded-t-2xl sm:rounded-t-3xl">
           <div className="flex items-start justify-between">
-            <div>
-              <h2 className="text-3xl font-bold mb-2">Vote for Our Next Treatment</h2>
-              <p className="opacity-90">Help us decide which advanced technology to bring next!</p>
+            <div className="flex-1 pr-2">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">Vote for Our Next Treatment</h2>
+              <p className="opacity-90 text-sm sm:text-base">Help us decide which advanced technology to bring next!</p>
             </div>
             <button
               onClick={onClose}
-              className="w-10 h-10 bg-white/20 rounded-full hover:bg-white/30 transition-colors flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full hover:bg-white/30 transition-colors flex items-center justify-center flex-shrink-0"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -110,9 +110,9 @@ export default function ComingSoonVoting({ onClose }: ComingSoonVotingProps) {
           </div>
         </div>
 
-        <div className="p-8">
+        <div className="p-4 sm:p-6 md:p-8">
           {/* Live Stats */}
-          <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-4 mb-8">
+          <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl sm:rounded-2xl p-3 sm:p-4 mb-6 sm:mb-8">
             <div className="flex justify-around items-center text-center">
               <div>
                 <p className="text-2xl font-bold text-primary-600">{totalVotes}</p>
@@ -130,14 +130,14 @@ export default function ComingSoonVoting({ onClose }: ComingSoonVotingProps) {
           </div>
 
           {/* Treatment Options */}
-          <h3 className="text-xl font-bold mb-4">Select your preferred treatment:</h3>
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
+          <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Select your preferred treatment:</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
             {treatments.map((treatment) => (
               <button
                 key={treatment.id}
                 onClick={() => !hasVoted && setSelectedTreatment(treatment.id)}
                 disabled={hasVoted}
-                className={`relative p-6 rounded-2xl border-2 transition-all duration-300 ${
+                className={`relative p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 transition-all duration-300 ${
                   selectedTreatment === treatment.id 
                     ? 'border-primary-500 bg-primary-50 scale-105 shadow-lg' 
                     : 'border-neutral-200 hover:border-primary-300 bg-white'
@@ -151,15 +151,15 @@ export default function ComingSoonVoting({ onClose }: ComingSoonVotingProps) {
                   />
                 </div>
 
-                <div className="text-center space-y-3 pt-2">
-                  <div className="text-4xl">{treatment.icon}</div>
-                  <h4 className="font-bold text-lg">{treatment.name}</h4>
-                  <p className="text-sm text-neutral-600">{treatment.description}</p>
-                  <div className="flex items-center justify-center space-x-2">
-                    <span className="text-2xl font-bold text-primary-600">
+                <div className="text-center space-y-2 sm:space-y-3 pt-2">
+                  <div className="text-3xl sm:text-4xl">{treatment.icon}</div>
+                  <h4 className="font-bold text-base sm:text-lg">{treatment.name}</h4>
+                  <p className="text-xs sm:text-sm text-neutral-600">{treatment.description}</p>
+                  <div className="flex items-center justify-center space-x-1 sm:space-x-2">
+                    <span className="text-xl sm:text-2xl font-bold text-primary-600">
                       {votes[treatment.id as keyof typeof votes]}
                     </span>
-                    <span className="text-sm text-neutral-500">
+                    <span className="text-xs sm:text-sm text-neutral-500">
                       ({getPercentage(treatment.id as keyof typeof votes)}%)
                     </span>
                   </div>
@@ -179,8 +179,8 @@ export default function ComingSoonVoting({ onClose }: ComingSoonVotingProps) {
           {/* Concerns Selection */}
           {!hasVoted && (
             <>
-              <h3 className="text-lg font-semibold mb-3">What concerns interest you? (optional)</h3>
-              <div className="flex flex-wrap gap-3 mb-8">
+              <h3 className="text-base sm:text-lg font-semibold mb-3">What concerns interest you? (optional)</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
                 {concerns.map(concern => (
                   <button
                     key={concern.id}
@@ -189,7 +189,7 @@ export default function ComingSoonVoting({ onClose }: ComingSoonVotingProps) {
                         ? prev.filter(id => id !== concern.id)
                         : [...prev, concern.id]
                     )}
-                    className={`px-4 py-2 rounded-full border-2 transition-all duration-300 ${
+                    className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border-2 transition-all duration-300 ${
                       selectedConcerns.includes(concern.id)
                         ? 'border-primary-500 bg-primary-50'
                         : 'border-neutral-200 hover:border-primary-300'
@@ -202,20 +202,20 @@ export default function ComingSoonVoting({ onClose }: ComingSoonVotingProps) {
               </div>
 
               {/* Email & Submit */}
-              <div className="bg-primary-50 rounded-2xl p-6">
-                <h4 className="font-semibold mb-3">Get exclusive launch pricing!</h4>
+              <div className="bg-primary-50 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                <h4 className="font-semibold mb-3 text-sm sm:text-base">Get exclusive launch pricing!</h4>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
                     placeholder="your@email.com (optional)"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 rounded-full border border-neutral-200 focus:outline-none focus:border-primary-500"
+                    className="flex-1 px-3 py-2.5 sm:px-4 sm:py-3 rounded-full border border-neutral-200 focus:outline-none focus:border-primary-500 text-sm sm:text-base"
                   />
                   <button
                     onClick={handleVote}
                     disabled={!selectedTreatment}
-                    className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${
+                    className={`px-6 py-2.5 sm:px-8 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
                       selectedTreatment
                         ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-xl hover:scale-105'
                         : 'bg-neutral-200 text-neutral-400 cursor-not-allowed'

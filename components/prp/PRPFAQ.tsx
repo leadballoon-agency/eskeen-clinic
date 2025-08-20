@@ -37,41 +37,41 @@ export default function PRPFAQ() {
   ];
 
   return (
-    <section className="py-24 bg-neutral-50">
-      <div className="max-w-4xl mx-auto section-padding">
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-primary-600 font-medium tracking-wider uppercase">FAQ</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
+    <section className="py-16 sm:py-20 md:py-24 bg-neutral-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">FAQ</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Your Questions
             <span className="gradient-text"> Answered</span>
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
-            <details key={index} className="group bg-white rounded-2xl shadow-lg">
-              <summary className="flex justify-between items-center cursor-pointer list-none p-6 hover:bg-primary-50 transition-colors rounded-2xl">
-                <span className="font-semibold text-lg pr-4">{faq.question}</span>
+            <details key={index} className="group bg-white rounded-xl sm:rounded-2xl shadow-lg">
+              <summary className="flex justify-between items-center cursor-pointer list-none p-4 sm:p-6 hover:bg-primary-50 transition-colors rounded-xl sm:rounded-2xl">
+                <span className="font-semibold text-base sm:text-lg pr-3 sm:pr-4 text-left">{faq.question}</span>
                 <span className="text-primary-500 group-open:rotate-180 transition-transform flex-shrink-0">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
               </summary>
-              <div className="px-6 pb-6 text-neutral-600">
+              <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-neutral-600">
                 {faq.answer}
               </div>
             </details>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-neutral-600 mb-6">Still have questions about PRP therapy?</p>
+        <div className="mt-10 sm:mt-12 text-center">
+          <p className="text-sm sm:text-base text-neutral-600 mb-4 sm:mb-6">Still have questions about PRP therapy?</p>
           <a
             href="https://www.treatwell.co.uk/place/eskeen-clinic/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base md:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             Book Free Consultation
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

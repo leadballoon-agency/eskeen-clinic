@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import {
   PRPHero,
   PRPBenefits,
+  PRPAssessmentSection,
   PRPProcess,
   PRPResults,
   PRPPricing,
@@ -29,6 +30,7 @@ export default function PRPPage() {
       <Navigation scrolled={scrolled} />
       <main className="overflow-hidden">
         <PRPHero />
+        <PRPAssessmentSection />
         <PRPBenefits />
         <PRPResults />
         <PRPProcess />

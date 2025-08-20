@@ -47,27 +47,45 @@ export default function PRPCTA() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl mb-3">👨‍🦲</div>
-            <h4 className="font-bold mb-2">For Men</h4>
-            <p className="text-sm text-neutral-600">Male pattern baldness & facial rejuvenation</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="text-2xl mb-2">👨‍🦲</div>
+            <h4 className="font-semibold text-sm">For Men</h4>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl mb-3">👩</div>
-            <h4 className="font-bold mb-2">For Women</h4>
-            <p className="text-sm text-neutral-600">Hair thinning & anti-aging treatments</p>
+          <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="text-2xl mb-2">👩</div>
+            <h4 className="font-semibold text-sm">For Women</h4>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl mb-3">💇‍♀️</div>
-            <h4 className="font-bold mb-2">Hair Restoration</h4>
-            <p className="text-sm text-neutral-600">Regrow & strengthen natural hair</p>
+          <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="text-2xl mb-2">💇‍♀️</div>
+            <h4 className="font-semibold text-sm">Hair</h4>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl mb-3">✨</div>
-            <h4 className="font-bold mb-2">Skin Rejuvenation</h4>
-            <p className="text-sm text-neutral-600">Natural collagen & glow boost</p>
+          <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="text-2xl mb-2">✨</div>
+            <h4 className="font-semibold text-sm">Skin</h4>
           </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <button
+            onClick={() => {
+              // Scroll to assessment or trigger booking modal
+              document.getElementById('assessment')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            Ready to Start? Take Your Assessment
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </button>
+          
+          <p className="mt-6 text-sm text-neutral-600">
+            Want to compare options first? 
+            <a href="/tools" className="text-primary-600 font-medium hover:text-primary-700 ml-1">
+              Explore our treatment comparison tools →
+            </a>
+          </p>
         </div>
 
         <div className="mt-16 text-center">

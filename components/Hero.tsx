@@ -54,19 +54,19 @@ export default function Hero() {
               to feminine beauty and everything in between.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#consultation"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3.5 rounded-full font-medium hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                Take Skin Assessment
+                Start Assessment
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-full font-medium text-lg hover:bg-primary-50 transition-all duration-300"
+                className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-6 py-3.5 rounded-full font-medium hover:bg-primary-50 transition-all duration-300"
               >
                 View Treatments
               </a>
