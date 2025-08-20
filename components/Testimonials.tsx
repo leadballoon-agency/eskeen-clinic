@@ -78,23 +78,23 @@ export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-primary-50 to-white">
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-primary-600 font-medium tracking-wider uppercase">Client Success Stories</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
+    <section id="testimonials" className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-primary-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">Client Success Stories</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Real Results,
             <span className="gradient-text"> Real People</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto">
             Don't just take our word for it - hear what our clients have to say about their experience
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Real Client Reviews</h3>
-            <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-xl sm:text-2xl font-bold">Real Client Reviews</h3>
+            <div className="space-y-4 max-h-[400px] sm:max-h-[600px] overflow-y-auto pr-2 sm:pr-4 custom-scrollbar">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id}
@@ -102,10 +102,10 @@ export default function Testimonials() {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-400/20 to-primary-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-60"></div>
-                  <div className="relative bg-white/80 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="relative bg-white/80 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <p className="font-semibold text-lg bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                        <p className="font-semibold text-base sm:text-lg bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
                           {testimonial.name}
                         </p>
                         <p className="text-sm text-primary-600 font-medium">{testimonial.treatment}</p>
@@ -116,7 +116,7 @@ export default function Testimonials() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-neutral-700 mb-3 leading-relaxed">{testimonial.comment}</p>
+                    <p className="text-sm sm:text-base text-neutral-700 mb-3 leading-relaxed">{testimonial.comment}</p>
                     <div className="flex items-center justify-between">
                       <p className="text-sm text-neutral-500">{testimonial.date}</p>
                       <div className="flex items-center text-xs text-primary-600">
@@ -132,12 +132,12 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Treatment Results</h3>
-            <div className="bg-white rounded-3xl p-8 shadow-xl">
-              <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl mb-6 flex items-center justify-center">
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-xl sm:text-2xl font-bold">Treatment Results</h3>
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
+              <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center">
                 <div className="text-center">
-                  <p className="text-6xl mb-4">📸</p>
+                  <p className="text-5xl sm:text-6xl mb-3 sm:mb-4">📸</p>
                   <p className="text-primary-700 font-medium">Before & After Gallery</p>
                   <p className="text-sm text-primary-600 mt-2">Available during consultation</p>
                 </div>
@@ -147,7 +147,7 @@ export default function Testimonials() {
                 {beforeAfterResults.map((result, index) => (
                   <div
                     key={result.id}
-                    className={`p-4 rounded-xl transition-all cursor-pointer ${
+                    className={`p-3 sm:p-4 rounded-xl transition-all cursor-pointer ${
                       activeIndex === index
                         ? 'bg-gradient-to-r from-primary-50 to-primary-100 border-2 border-primary-300'
                         : 'bg-neutral-50 hover:bg-neutral-100'
@@ -156,8 +156,8 @@ export default function Testimonials() {
                   >
                     <div className="flex justify-between items-start">
                       <div>
-                        <p className="font-semibold">{result.treatment}</p>
-                        <p className="text-sm text-neutral-600 mt-1">{result.description}</p>
+                        <p className="font-semibold text-sm sm:text-base">{result.treatment}</p>
+                        <p className="text-xs sm:text-sm text-neutral-600 mt-1">{result.description}</p>
                       </div>
                       <span className="text-xs bg-primary-500 text-white px-3 py-1 rounded-full">
                         {result.improvement}
@@ -167,7 +167,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-primary-50 rounded-xl">
+              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-primary-50 rounded-xl">
                 <p className="text-sm text-primary-700">
                   <strong>Privacy Notice:</strong> We respect our clients' privacy. 
                   Full before/after photos are available during your consultation.
@@ -177,32 +177,32 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary-400/30 to-primary-600/30 rounded-3xl blur-2xl"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-white/30 shadow-2xl">
+            <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/30 shadow-2xl">
               <div className="text-center space-y-4">
-                <h3 className="text-2xl font-bold">Venue Excellence</h3>
-                <div className="text-6xl font-bold gradient-text">5.0</div>
-                <div className="flex justify-center text-yellow-400 text-2xl">
+                <h3 className="text-xl sm:text-2xl font-bold">Venue Excellence</h3>
+                <div className="text-5xl sm:text-6xl font-bold gradient-text">5.0</div>
+                <div className="flex justify-center text-yellow-400 text-xl sm:text-2xl">
                   {'★★★★★'}
                 </div>
-                <p className="text-neutral-600 font-medium">56 Verified Reviews</p>
+                <p className="text-sm sm:text-base text-neutral-600 font-medium">56 Verified Reviews</p>
                 
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-neutral-200">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 sm:pt-6 border-t border-neutral-200">
                   <div className="text-center">
-                    <div className="text-2xl mb-1">🏛️</div>
-                    <p className="text-sm font-medium text-neutral-700">Ambience</p>
+                    <div className="text-xl sm:text-2xl mb-1">🏛️</div>
+                    <p className="text-xs sm:text-sm font-medium text-neutral-700">Ambience</p>
                     <div className="text-yellow-400">★★★★★</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl mb-1">✨</div>
-                    <p className="text-sm font-medium text-neutral-700">Cleanliness</p>
+                    <div className="text-xl sm:text-2xl mb-1">✨</div>
+                    <p className="text-xs sm:text-sm font-medium text-neutral-700">Cleanliness</p>
                     <div className="text-yellow-400">★★★★★</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl mb-1">👩‍⚕️</div>
-                    <p className="text-sm font-medium text-neutral-700">Staff</p>
+                    <div className="text-xl sm:text-2xl mb-1">👩‍⚕️</div>
+                    <p className="text-xs sm:text-sm font-medium text-neutral-700">Staff</p>
                     <div className="text-yellow-400">★★★★★</div>
                   </div>
                 </div>
@@ -216,9 +216,9 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white flex flex-col justify-center">
-            <h3 className="text-3xl font-bold mb-4">Join Our Happy Clients</h3>
-            <p className="text-primary-100 mb-6">
+          <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-center">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Join Our Happy Clients</h3>
+            <p className="text-sm sm:text-base text-primary-100 mb-4 sm:mb-6">
               Experience the difference of personalised aesthetic care with Nurse Elanda and team
             </p>
             <div className="space-y-3">
@@ -226,7 +226,7 @@ export default function Testimonials() {
                 href="https://www.treatwell.co.uk/place/eskeen-clinic/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center bg-white text-primary-600 px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="block text-center bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
                 Book Your Treatment
               </a>
@@ -234,7 +234,7 @@ export default function Testimonials() {
                 href="https://www.treatwell.co.uk/place/eskeen-clinic/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all duration-300"
+                className="block text-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-white/10 transition-all duration-300"
               >
                 Read All 56 Reviews
               </a>

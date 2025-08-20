@@ -80,15 +80,15 @@ export default function Services() {
   const [showVoting, setShowVoting] = useState(false);
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-white to-primary-50">
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-primary-600 font-medium tracking-wider uppercase">Our Services</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
+    <section id="services" className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-white to-primary-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">Our Services</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Treatments That
             <span className="gradient-text"> Transform</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto">
             Each treatment is tailored to your unique needs, ensuring natural-looking results 
             that enhance your confidence
           </p>
@@ -106,30 +106,30 @@ export default function Services() {
         </div>
 
         {/* Current Services */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service) => (
             <div
               key={service.id}
-              className={`group relative bg-white rounded-3xl p-8 transition-all duration-500 cursor-pointer flex flex-col h-full ${
-                activeService === service.id ? 'shadow-2xl scale-105' : 'shadow-lg hover:shadow-xl'
+              className={`group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 transition-all duration-500 cursor-pointer flex flex-col h-full ${
+                activeService === service.id ? 'shadow-2xl sm:scale-105' : 'shadow-lg hover:shadow-xl'
               }`}
               onClick={() => setActiveService(service.id)}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 rounded-3xl transition-opacity group-hover:opacity-10`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 rounded-2xl sm:rounded-3xl transition-opacity group-hover:opacity-10`}></div>
               
               <div className="relative flex flex-col h-full">
-                <div className="mb-6">
-                  <div className={`text-5xl p-4 bg-gradient-to-br ${service.gradient} rounded-2xl bg-opacity-10 inline-block`}>
+                <div className="mb-4 sm:mb-6">
+                  <div className={`text-4xl sm:text-5xl p-3 sm:p-4 bg-gradient-to-br ${service.gradient} rounded-xl sm:rounded-2xl bg-opacity-10 inline-block`}>
                     {service.icon}
                   </div>
                 </div>
 
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-neutral-600">{service.description}</p>
+                <div className="mb-4 sm:mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-neutral-600">{service.description}</p>
                 </div>
 
-                <ul className="space-y-2 mb-6 flex-grow">
+                <ul className="space-y-2 mb-4 sm:mb-6 flex-grow">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-sm text-neutral-700">
                       <svg className="w-5 h-5 text-primary-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -140,10 +140,10 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <div className="flex items-center justify-between pt-4 border-t border-neutral-100 mt-auto">
+                <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-neutral-100 mt-auto">
                   <div>
-                    <p className="text-2xl font-bold gradient-text">{service.price}</p>
-                    <p className="text-sm text-neutral-500">{service.duration}</p>
+                    <p className="text-xl sm:text-2xl font-bold gradient-text">{service.price}</p>
+                    <p className="text-xs sm:text-sm text-neutral-500">{service.duration}</p>
                   </div>
                   <button
                     onClick={(e) => {
@@ -164,24 +164,24 @@ export default function Services() {
         </div>
 
 
-        <div id="consultation" className="mt-16 scroll-mt-20">
+        <div id="consultation" className="mt-12 sm:mt-16 scroll-mt-20">
           {!showAssessment ? (
-            <div className="text-center bg-gradient-to-br from-primary-50 to-white rounded-3xl p-12 shadow-xl">
+            <div className="text-center bg-gradient-to-br from-primary-50 to-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl">
               <div className="max-w-2xl mx-auto space-y-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-4xl">✨</span>
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center mx-auto">
+                  <span className="text-3xl sm:text-4xl">✨</span>
                 </div>
-                <h3 className="text-3xl font-bold">
+                <h3 className="text-2xl sm:text-3xl font-bold">
                   Not Sure Which Treatment Is Right For You?
                 </h3>
-                <p className="text-lg text-neutral-600">
+                <p className="text-base sm:text-lg text-neutral-600">
                   Take our AI-powered assessment to receive personalised treatment recommendations 
                   based on your unique skin profile and goals
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <button
                     onClick={() => setShowAssessment(true)}
-                    className="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full font-medium text-base sm:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     Start Your Assessment →
                   </button>
@@ -195,36 +195,36 @@ export default function Services() {
         </div>
 
         {/* Coming Soon Section - Visual Poll */}
-        <div className="mt-16">
+        <div className="mt-12 sm:mt-16">
           <div className="text-center mb-8">
             <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-primary-100 to-primary-200 rounded-full mb-4">
               <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse mr-2"></span>
               <span className="text-primary-700 font-medium text-sm">Coming 2025</span>
             </div>
-            <h3 className="text-2xl font-bold mb-2">Which Treatment Should We Add Next?</h3>
-            <p className="text-neutral-600">Click to vote for your preferred advanced treatment</p>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2">Which Treatment Should We Add Next?</h3>
+            <p className="text-sm sm:text-base text-neutral-600">Click to vote for your preferred advanced treatment</p>
           </div>
 
           <div className="relative">
             {/* Interactive Visual Voting Cards */}
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
               {/* CO2 Laser */}
               <div 
                 onClick={() => setShowVoting(true)}
                 className="group relative cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 p-6 h-48 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 p-4 sm:p-6 h-40 sm:h-48 transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-400/20 to-orange-400/20 rounded-full blur-2xl"></div>
                   <div className="relative z-10">
-                    <div className="text-4xl mb-3">🔬</div>
-                    <h4 className="font-bold text-lg mb-1">CO2 Laser</h4>
-                    <p className="text-sm text-neutral-600">Deep resurfacing</p>
+                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🔬</div>
+                    <h4 className="font-bold text-base sm:text-lg mb-1">CO2 Laser</h4>
+                    <p className="text-xs sm:text-sm text-neutral-600">Deep resurfacing</p>
                   </div>
-                  <div className="absolute bottom-4 left-6 right-6">
+                  <div className="absolute bottom-3 sm:bottom-4 left-4 sm:left-6 right-4 sm:right-6">
                     <div className="flex items-center justify-between">
                       <div className="flex -space-x-2">
                         {[...Array(3)].map((_, i) => (
-                          <div key={i} className="w-6 h-6 bg-gradient-to-br from-red-400 to-orange-500 rounded-full border-2 border-white"></div>
+                          <div key={i} className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-red-400 to-orange-500 rounded-full border-2 border-white"></div>
                         ))}
                       </div>
                       <span className="text-xs text-neutral-500">342 votes</span>
@@ -238,18 +238,18 @@ export default function Services() {
                 onClick={() => setShowVoting(true)}
                 className="group relative cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 p-6 h-48 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 p-4 sm:p-6 h-40 sm:h-48 transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
                   <div className="relative z-10">
-                    <div className="text-4xl mb-3">⚡</div>
-                    <h4 className="font-bold text-lg mb-1">Morpheus8</h4>
-                    <p className="text-sm text-neutral-600">RF microneedling</p>
+                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">⚡</div>
+                    <h4 className="font-bold text-base sm:text-lg mb-1">Morpheus8</h4>
+                    <p className="text-xs sm:text-sm text-neutral-600">RF microneedling</p>
                   </div>
-                  <div className="absolute bottom-4 left-6 right-6">
+                  <div className="absolute bottom-3 sm:bottom-4 left-4 sm:left-6 right-4 sm:right-6">
                     <div className="flex items-center justify-between">
                       <div className="flex -space-x-2">
                         {[...Array(3)].map((_, i) => (
-                          <div key={i} className="w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full border-2 border-white"></div>
+                          <div key={i} className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full border-2 border-white"></div>
                         ))}
                       </div>
                       <span className="text-xs text-neutral-500">218 votes</span>
@@ -263,18 +263,18 @@ export default function Services() {
                 onClick={() => setShowVoting(true)}
                 className="group relative cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-6 h-48 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-4 sm:p-6 h-40 sm:h-48 transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-2xl"></div>
                   <div className="relative z-10">
-                    <div className="text-4xl mb-3">🎯</div>
-                    <h4 className="font-bold text-lg mb-1">HIFU</h4>
-                    <p className="text-sm text-neutral-600">Non-surgical lift</p>
+                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🎯</div>
+                    <h4 className="font-bold text-base sm:text-lg mb-1">HIFU</h4>
+                    <p className="text-xs sm:text-sm text-neutral-600">Non-surgical lift</p>
                   </div>
-                  <div className="absolute bottom-4 left-6 right-6">
+                  <div className="absolute bottom-3 sm:bottom-4 left-4 sm:left-6 right-4 sm:right-6">
                     <div className="flex items-center justify-between">
                       <div className="flex -space-x-2">
                         {[...Array(3)].map((_, i) => (
-                          <div key={i} className="w-6 h-6 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full border-2 border-white"></div>
+                          <div key={i} className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full border-2 border-white"></div>
                         ))}
                       </div>
                       <span className="text-xs text-neutral-500">156 votes</span>

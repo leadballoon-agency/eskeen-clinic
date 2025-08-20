@@ -12,6 +12,7 @@ import {
   PRPFAQ,
   PRPCTA
 } from '@/components/prp';
+import PRPBeforeAfter from '@/components/prp/PRPBeforeAfter';
 
 export default function PRPPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,6 +34,7 @@ export default function PRPPage() {
         <PRPAssessmentSection />
         <PRPBenefits />
         <PRPResults />
+        <PRPBeforeAfter />
         <PRPProcess />
         <PRPPricing />
         <PRPFAQ />
