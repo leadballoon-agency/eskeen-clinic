@@ -1,0 +1,8 @@
+export { default as PRPHero } from './PRPHero';
+export { default as PRPBenefits } from './PRPBenefits';
+export { default as PRPProcess } from './PRPProcess';
+export { default as PRPResults } from './PRPResults';
+export { default as PRPPricing } from './PRPPricing';
+export { default as PRPFAQ } from './PRPFAQ';
+export { default as PRPCTA } from './PRPCTA';
+export { default as PRPAssessment } from './PRPAssessment';

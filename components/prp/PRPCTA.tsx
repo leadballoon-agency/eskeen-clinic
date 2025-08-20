@@ -1,6 +1,5 @@
 'use client';
 
-import PRPAssessment from './PRPAssessment';
 
 export default function PRPCTA() {
   return (
@@ -48,9 +47,7 @@ export default function PRPCTA() {
           </div>
         </div>
 
-        <PRPAssessment />
-
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <div className="bg-white rounded-2xl p-6 shadow-lg">
             <div className="text-3xl mb-3">👨‍🦲</div>
             <h4 className="font-bold mb-2">For Men</h4>

@@ -88,7 +88,7 @@ export default function PRPBenefits() {
           </div>
         </div>
 
-        <div className="mb-16">
+        <div className="mb-16" id="assessment">
           <h3 className="text-2xl font-bold text-center mb-8">Find Your Perfect PRP Treatment</h3>
           <PRPAssessment />
         </div>
