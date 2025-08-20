@@ -53,13 +53,13 @@ export default function PRPHero() {
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="aspect-[4/3] relative">
                   <img
-                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=600&fit=crop"
-                    alt="Hair Restoration PRP"
+                    src="/images/clinic/prp-man.png"
+                    alt="Male Hair Restoration PRP"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 text-white">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Hair Restoration</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Male Hair Restoration</h3>
                     <p className="text-sm sm:text-base text-white/90">Stop hair loss • Stimulate growth</p>
                   </div>
                 </div>
@@ -70,14 +70,14 @@ export default function PRPHero() {
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="aspect-[4/3] relative">
                   <img
-                    src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop"
-                    alt="Facial Rejuvenation PRP"
+                    src="/images/clinic/woman-thinning-hair.png"
+                    alt="Female Hair Restoration PRP"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 text-white">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Facial Rejuvenation</h3>
-                    <p className="text-sm sm:text-base text-white/90">Natural glow • Collagen boost</p>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Female Hair Restoration</h3>
+                    <p className="text-sm sm:text-base text-white/90">Restore thickness • Natural results</p>
                   </div>
                 </div>
               </div>

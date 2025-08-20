@@ -17,23 +17,23 @@ export default function PRPCTA() {
 
         <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white mb-12">
           <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">🚀 NEW: PRP + Exosomes</h3>
+            <h3 className="text-3xl font-bold mb-4">💉 FREE Biotin Boost Included</h3>
             <p className="text-xl text-primary-100 mb-6">
-              Supercharge your results with exosome therapy - up to 1000x more growth factors 
-              for unprecedented regeneration. The future of aesthetic medicine is here!
+              Every PRP hair treatment now includes a complimentary biotin injection - 
+              scientifically proven to strengthen hair follicles and accelerate growth for exceptional results!
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
-                <p className="text-3xl font-bold mb-1">1000x</p>
-                <p className="text-primary-200">More Growth Factors</p>
+                <p className="text-3xl font-bold mb-1">Stronger</p>
+                <p className="text-primary-200">Hair Follicles</p>
               </div>
               <div>
-                <p className="text-3xl font-bold mb-1">50%</p>
-                <p className="text-primary-200">Faster Results</p>
+                <p className="text-3xl font-bold mb-1">Faster</p>
+                <p className="text-primary-200">Hair Growth</p>
               </div>
               <div>
-                <p className="text-3xl font-bold mb-1">Latest</p>
-                <p className="text-primary-200">Technology</p>
+                <p className="text-3xl font-bold mb-1">FREE</p>
+                <p className="text-primary-200">With Every Session</p>
               </div>
             </div>
             <a
@@ -42,7 +42,7 @@ export default function PRPCTA() {
               rel="noopener noreferrer"
               className="inline-block mt-6 bg-white text-primary-600 px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
-              Ask About PRP + Exosomes
+              Book PRP + FREE Biotin Now
             </a>
           </div>
         </div>

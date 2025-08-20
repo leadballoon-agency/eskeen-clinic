@@ -59,18 +59,32 @@ const beforeAfterResults = [
     treatment: 'Lip Enhancement',
     description: 'Natural lip enhancement with 1ml dermal filler',
     improvement: '40% volume increase',
+    timeframe: '1 session',
+    icon: '💋',
   },
   {
     id: 2,
     treatment: 'Skin Rejuvenation',
     description: 'Profhilo treatment for skin quality',
     improvement: '60% hydration boost',
+    timeframe: '2 sessions',
+    icon: '✨',
   },
   {
     id: 3,
     treatment: 'Facial Contouring',
     description: 'Jawline and cheek enhancement',
     improvement: 'Defined contours',
+    timeframe: '1 session',
+    icon: '💎',
+  },
+  {
+    id: 4,
+    treatment: 'Anti-Wrinkle',
+    description: 'Botox for forehead and crow\'s feet',
+    improvement: 'Smoother skin',
+    timeframe: '1 session',
+    icon: '🌟',
   },
 ];
 
@@ -134,43 +148,73 @@ export default function Testimonials() {
 
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-xl sm:text-2xl font-bold">Treatment Results</h3>
-            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
-              <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-5xl sm:text-6xl mb-3 sm:mb-4">📸</p>
-                  <p className="text-primary-700 font-medium">Before & After Gallery</p>
-                  <p className="text-sm text-primary-600 mt-2">Available during consultation</p>
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden">
+              {/* Main Visual Display */}
+              <div className="p-6 sm:p-8">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <p className="text-5xl sm:text-6xl mb-3 sm:mb-4">
+                      {beforeAfterResults[activeIndex].icon}
+                    </p>
+                    <p className="text-base sm:text-lg text-primary-700 font-medium mb-2">
+                      {beforeAfterResults[activeIndex].treatment}
+                    </p>
+                    <p className="text-xs sm:text-sm text-primary-600">
+                      Professional photography available in clinic
+                    </p>
+                  </div>
+                </div>
+
+                {/* Treatment Details */}
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2">Treatment Details</h4>
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                      <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-3 border border-primary-100">
+                        <p className="text-xs text-neutral-500 mb-1">Improvement</p>
+                        <p className="font-semibold text-sm sm:text-base text-primary-600">
+                          {beforeAfterResults[activeIndex].improvement}
+                        </p>
+                      </div>
+                      <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-3 border border-primary-100">
+                        <p className="text-xs text-neutral-500 mb-1">Sessions</p>
+                        <p className="font-semibold text-sm sm:text-base text-primary-600">
+                          {beforeAfterResults[activeIndex].timeframe}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Treatment Selector */}
+                  <div className="space-y-2">
+                    <p className="text-sm font-medium text-neutral-700">Select a treatment:</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {beforeAfterResults.map((result, index) => (
+                        <button
+                          key={result.id}
+                          onClick={() => setActiveIndex(index)}
+                          className={`p-2.5 sm:p-3 rounded-lg text-left transition-all ${
+                            activeIndex === index
+                              ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg'
+                              : 'bg-neutral-50 hover:bg-neutral-100 text-neutral-700'
+                          }`}
+                        >
+                          <div className="flex items-center space-x-2">
+                            <span className="text-lg">{result.icon}</span>
+                            <span className="text-xs sm:text-sm font-medium">{result.treatment}</span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                {beforeAfterResults.map((result, index) => (
-                  <div
-                    key={result.id}
-                    className={`p-3 sm:p-4 rounded-xl transition-all cursor-pointer ${
-                      activeIndex === index
-                        ? 'bg-gradient-to-r from-primary-50 to-primary-100 border-2 border-primary-300'
-                        : 'bg-neutral-50 hover:bg-neutral-100'
-                    }`}
-                    onClick={() => setActiveIndex(index)}
-                  >
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <p className="font-semibold text-sm sm:text-base">{result.treatment}</p>
-                        <p className="text-xs sm:text-sm text-neutral-600 mt-1">{result.description}</p>
-                      </div>
-                      <span className="text-xs bg-primary-500 text-white px-3 py-1 rounded-full">
-                        {result.improvement}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-primary-50 rounded-xl">
-                <p className="text-sm text-primary-700">
+              {/* Privacy Notice */}
+              <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4 sm:p-5">
+                <p className="text-xs sm:text-sm text-primary-700">
                   <strong>Privacy Notice:</strong> We respect our clients' privacy. 
-                  Full before/after photos are available during your consultation.
+                  Full before/after photos are shown during your consultation.
                 </p>
               </div>
             </div>

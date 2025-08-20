@@ -124,17 +124,23 @@ export default function PRPResults() {
 
             <div className="relative order-first lg:order-last">
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                <div className="aspect-[4/3] sm:aspect-[3/2]">
-                  <img
-                    src={activeTab === 'hair' 
-                      ? 'https://images.unsplash.com/photo-1559058789-672da06263d4?w=600&h=400&fit=crop'
-                      : 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop'
-                    }
-                    alt={`PRP ${activeTab} results`}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="aspect-[4/3] sm:aspect-[3/2] bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="text-6xl sm:text-7xl mb-4">
+                      {activeTab === 'hair' ? '💇‍♂️' : '✨'}
+                    </div>
+                    <h4 className="text-lg sm:text-xl font-bold text-primary-800 mb-2">
+                      {activeTab === 'hair' ? 'Hair Restoration Results' : 'Facial Rejuvenation Results'}
+                    </h4>
+                    <p className="text-sm text-primary-600">
+                      Before & After Photos Available
+                    </p>
+                    <p className="text-xs text-primary-500 mt-2">
+                      During Your Consultation
+                    </p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <p className="text-sm font-medium mb-1">Individual Results May Vary</p>
                   <p className="text-xs opacity-90">Results shown after complete treatment series</p>

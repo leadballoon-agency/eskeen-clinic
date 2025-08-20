@@ -149,12 +149,12 @@ export default function InteractiveConsultation() {
       
       return {
         treatment: 'PRP Hair Restoration Programme',
-        subtreatments: ['PRP Therapy', 'Exosome Enhancement Available'],
-        sessions: '4-6 sessions for optimal results',
-        price: '£320 per session (packages available)',
-        message: `Our PRP therapy with optional exosome enhancement offers the most advanced hair restoration. ${genderNote}.`,
+        subtreatments: ['PRP Therapy', 'FREE Biotin Injection Included'],
+        sessions: '3-6 sessions for optimal results',
+        price: '£175 per session (packages available)',
+        message: `Our PRP therapy with complimentary biotin injection offers the most effective natural hair restoration. ${genderNote}.`,
         matchScore: 98,
-        benefits: ['Natural hair regrowth', 'No downtime', 'Long-lasting results'],
+        benefits: ['Natural hair regrowth', 'No downtime', 'Long-lasting results', 'Free biotin boost'],
       };
     } else if (concern === 'aging' && (age === '36-45' || age === '46+')) {
       return {
