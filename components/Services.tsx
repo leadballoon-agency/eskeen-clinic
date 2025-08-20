@@ -10,7 +10,7 @@ const services = [
     title: 'PRP Therapy',
     description: 'Natural hair restoration and facial rejuvenation using your own platelets',
     features: ['Hair restoration', 'Facial rejuvenation', 'Natural collagen', '100% natural'],
-    price: '£320',
+    price: 'From £175',
     duration: '45 min',
     icon: '🩸',
     gradient: 'from-primary-400 to-primary-600',

@@ -67,25 +67,25 @@ export default function PRPAssessment() {
       return {
         treatment: 'Hair Restoration PRP',
         sessions: commitment === 'package6' ? '6 sessions optimal' : '3-6 sessions recommended',
-        price: commitment === 'package6' ? '£1,800 (6 sessions)' : commitment === 'package3' ? '£900 (3 sessions)' : '£320 per session',
-        message: 'PRP can effectively stimulate hair follicles and promote natural hair growth. Most clients see results after 3-4 sessions.',
-        benefits: ['Stops hair loss progression', 'Stimulates new growth', 'Thickens existing hair', 'No downtime'],
+        price: commitment === 'package6' ? '£699 (6 sessions + 6 biotin)' : commitment === 'package3' ? '£450 (3 sessions + 3 biotin)' : '£175 per session + free biotin',
+        message: 'PRP can effectively stimulate hair follicles and promote natural hair growth. Most clients see results after 3-4 sessions. All packages include biotin injections for enhanced results.',
+        benefits: ['Stops hair loss progression', 'Stimulates new growth', 'Thickens existing hair', 'Free biotin injections'],
       };
     } else if (concern === 'facial-aging') {
       return {
         treatment: 'Vampire Facial PRP',
         sessions: '3 sessions for best results',
-        price: commitment === 'package3' ? '£900 (3 sessions)' : '£320 per session',
-        message: 'PRP facial rejuvenation naturally boosts collagen production for younger-looking skin without fillers.',
-        benefits: ['Natural collagen boost', 'Improved skin texture', 'Reduced fine lines', 'Healthy glow'],
+        price: commitment === 'package6' ? '£699 (6 sessions)' : commitment === 'package3' ? '£450 (3 sessions)' : '£175 per session (including eyes)',
+        message: 'PRP facial rejuvenation naturally boosts collagen production for younger-looking skin without fillers. All facial treatments include the delicate eye area.',
+        benefits: ['Natural collagen boost', 'Improved skin texture', 'Reduced fine lines', 'Eye area included'],
       };
     } else {
       return {
         treatment: 'Combination PRP Therapy',
-        sessions: '6 sessions recommended',
-        price: '£1,800 (package deal)',
-        message: 'Treat both hair and facial concerns with our comprehensive PRP program for complete rejuvenation.',
-        benefits: ['Hair restoration', 'Facial rejuvenation', 'Package savings', 'Comprehensive care'],
+        sessions: commitment === 'single' ? 'Single session' : '3-6 sessions recommended',
+        price: commitment === 'single' ? '£350 (face & hair combo)' : '£250 (face, eyes & neck)',
+        message: 'Treat multiple areas with our combination packages. Choose face & hair for ultimate rejuvenation or our complete facial treatment including neck.',
+        benefits: ['Multiple areas treated', 'Combination savings', 'Comprehensive care', 'Flexible options'],
       };
     }
   };
