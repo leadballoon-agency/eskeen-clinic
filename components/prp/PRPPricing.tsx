@@ -58,7 +58,7 @@ export default function PRPPricing() {
             </div>
 
             <div className="relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium z-10">
                 POPULAR
               </div>
               <div className="relative bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 shadow-xl border-2 border-primary-300 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
@@ -186,7 +186,7 @@ export default function PRPPricing() {
             </div>
 
             <div className="relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium z-10">
                 RECOMMENDED
               </div>
               <div className="relative bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 shadow-xl border-2 border-primary-300 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">

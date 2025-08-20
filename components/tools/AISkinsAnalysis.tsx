@@ -166,7 +166,7 @@ export default function AISkinAnalysis() {
     });
 
     const treatmentDetails: { [key: string]: any } = {
-      'PRP Therapy': { price: '£320', sessions: '3-6', match: 95, description: 'Natural regeneration using your own platelets' },
+      'PRP Therapy': { price: 'From £175', sessions: '3-6', match: 95, description: 'Natural regeneration using your own platelets. Includes free biotin for hair treatments.' },
       'Chemical Peels': { price: '£150', sessions: '3-5', match: 88, description: 'Exfoliate and renew skin surface' },
       'Microneedling': { price: '£250', sessions: '4-6', match: 92, description: 'Stimulate collagen production' },
       'Hydrafacial': { price: '£180', sessions: '4-8', match: 85, description: 'Deep cleanse and hydrate' },
