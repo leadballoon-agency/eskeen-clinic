@@ -347,7 +347,7 @@ export default function CO2MobileAssessment() {
                   onClick={() => handleAnswer(option.value)}
                   className="relative bg-gradient-to-br from-white to-neutral-50 rounded-2xl p-6 border-2 border-neutral-200 hover:border-primary-400 transition-all hover:scale-105"
                 >
-                  <div className="text-4xl mb-2">{option.visual}</div>
+                  <div className="text-4xl mb-2">{(option as any).visual || (option as any).icon || (option as any).emoji}</div>
                   <p className="text-sm font-medium">{option.label}</p>
                 </button>
               ))}
