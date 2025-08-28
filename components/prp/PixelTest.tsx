@@ -2,18 +2,30 @@
 
 import { FacebookEvents } from '@/lib/facebook-events';
 
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
 export default function PixelTest() {
   const testPixelEvents = () => {
     console.log('🧪 Testing Facebook Pixel Events...');
+    console.log('Window.fbq exists?', typeof window.fbq);
     
-    // Test standard event
+    // Test direct fbq call
+    if (window.fbq) {
+      console.log('📌 Calling fbq directly...');
+      window.fbq('track', 'Lead', { value: 100, currency: 'GBP' });
+      window.fbq('trackCustom', 'TestEvent', { test: true });
+    }
+    
+    // Test via our wrapper functions
     FacebookEvents.Lead(500);
-    
-    // Test custom events
     FacebookEvents.StartAssessment('Test PRP');
     FacebookEvents.CompleteAssessment('Test PRP', 'Test Result', 175);
     
-    alert('Check console for Facebook Pixel events. You should see 3 events fired.');
+    alert('Check console for Facebook Pixel events. You should see test events fired.');
   };
 
   return (
