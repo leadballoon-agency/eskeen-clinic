@@ -137,11 +137,11 @@ export default function CO2PersonalizedAssessment() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-neutral-600">Expected Improvement:</span>
-                  <span className="font-semibold text-green-600">{concernOption?.improvement}</span>
+                  <span className="font-semibold text-green-600">{(concernOption as any)?.improvement || '70-80%'}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-neutral-600">Recommended Sessions:</span>
-                  <span className="font-semibold">{concernOption?.sessions}</span>
+                  <span className="font-semibold">{(concernOption as any)?.sessions || '1-3'}</span>
                 </div>
               </div>
             </div>
