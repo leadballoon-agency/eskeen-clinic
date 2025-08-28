@@ -20,6 +20,7 @@ export default function FacebookPixel() {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${FACEBOOK_PIXEL_ID}');
             fbq('track', 'PageView');
+            console.log('✅ Facebook Pixel Initialized with ID: ${FACEBOOK_PIXEL_ID}');
           `,
         }}
       />
