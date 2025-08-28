@@ -117,11 +117,11 @@ export default function CO2WowAssessment() {
         setIsAnalyzing(false);
         setShowVisualAnalysis(true);
         setTimeout(() => {
-          const assessmentData: AssessmentData = {
+          const assessmentData = {
             ...newAnswers,
             completed: true,
             timestamp: new Date().toISOString()
-          };
+          } as AssessmentData;
           localStorage.setItem('co2_assessment', JSON.stringify(assessmentData));
           window.dispatchEvent(new CustomEvent('assessmentCompleted', { detail: assessmentData }));
           setShowResults(true);
