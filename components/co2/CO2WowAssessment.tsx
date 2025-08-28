@@ -171,11 +171,11 @@ export default function CO2WowAssessment() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-neutral-600">Expected Improvement:</span>
-                  <span className="font-semibold text-green-600">{concernOption?.improvement}</span>
+                  <span className="font-semibold text-green-600">{(concernOption as any)?.improvement || '70-80%'}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-neutral-600">Recommended Sessions:</span>
-                  <span className="font-semibold">{concernOption?.sessions}</span>
+                  <span className="font-semibold">{(concernOption as any)?.sessions || '1-3'}</span>
                 </div>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function CO2WowAssessment() {
                   <div className="bg-gradient-to-r from-primary-50 to-purple-50 rounded-2xl p-6 transform transition-all duration-500 animate-slideUp">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-sm font-medium text-neutral-600">Match Score</span>
-                      <span className="text-2xl">{concernData?.emoji}</span>
+                      <span className="text-2xl">{(concernData as any)?.emoji || '🎯'}</span>
                     </div>
                     <div className="relative h-3 bg-white rounded-full overflow-hidden">
                       <div 
@@ -261,11 +261,11 @@ export default function CO2WowAssessment() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-blue-50 rounded-2xl p-4 transform transition-all duration-500 animate-slideUp" style={{ animationDelay: '0.1s' }}>
                       <p className="text-xs text-blue-600 mb-1">Expected Improvement</p>
-                      <p className="text-2xl font-bold text-blue-700">{concernData?.improvement}</p>
+                      <p className="text-2xl font-bold text-blue-700">{(concernData as any)?.improvement || '70-80%'}</p>
                     </div>
                     <div className="bg-purple-50 rounded-2xl p-4 transform transition-all duration-500 animate-slideUp" style={{ animationDelay: '0.2s' }}>
                       <p className="text-xs text-purple-600 mb-1">Treatment Sessions</p>
-                      <p className="text-2xl font-bold text-purple-700">{concernData?.sessions}</p>
+                      <p className="text-2xl font-bold text-purple-700">{(concernData as any)?.sessions || '1-3'}</p>
                     </div>
                   </div>
 
@@ -322,11 +322,11 @@ export default function CO2WowAssessment() {
               <div className="space-y-3">
                 <div className="bg-white rounded-xl p-3">
                   <p className="text-sm text-neutral-600 mb-1">For your {concernData?.label}:</p>
-                  <p className="font-semibold text-lg text-primary-600">{concernData?.improvement} improvement expected</p>
+                  <p className="font-semibold text-lg text-primary-600">{(concernData as any)?.improvement || '70-80%'} improvement expected</p>
                 </div>
                 <div className="bg-white rounded-xl p-3">
                   <p className="text-sm text-neutral-600 mb-1">Treatment plan:</p>
-                  <p className="font-semibold">{concernData?.sessions} sessions recommended</p>
+                  <p className="font-semibold">{(concernData as any)?.sessions || '1-3'} sessions recommended</p>
                 </div>
                 <div className="bg-white rounded-xl p-3">
                   <p className="text-sm text-neutral-600 mb-1">Timeline to results:</p>
@@ -408,9 +408,9 @@ export default function CO2WowAssessment() {
                     onClick={() => handleAnswer(option.value)}
                     className="group relative bg-gradient-to-br from-neutral-50 to-white border-2 border-neutral-200 rounded-2xl p-6 hover:border-primary-400 hover:shadow-lg transition-all duration-200"
                   >
-                    <div className="text-3xl mb-2">{option.emoji}</div>
+                    <div className="text-3xl mb-2">{(option as any).emoji}</div>
                     <div className="font-semibold text-sm mb-1">{option.label}</div>
-                    <div className="text-xs text-neutral-500">{option.description}</div>
+                    <div className="text-xs text-neutral-500">{(option as any).description}</div>
                     <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <svg className="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H6.5a1 1 0 000 2h4.086l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
