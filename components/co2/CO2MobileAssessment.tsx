@@ -384,7 +384,7 @@ export default function CO2MobileAssessment() {
                     value={option.value}
                     className="mr-3 accent-primary-500"
                   />
-                  <span className="text-2xl mr-3">{option.icon}</span>
+                  <span className="text-2xl mr-3">{(option as any).icon || (option as any).emoji}</span>
                   <span className="text-sm font-medium">{option.label}</span>
                 </label>
               ))}
@@ -407,9 +407,9 @@ export default function CO2MobileAssessment() {
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(option.value)}
-                  className={`${option.color} rounded-2xl p-4 transition-all hover:scale-105`}
+                  className={`${(option as any).color || 'bg-primary-100'} rounded-2xl p-4 transition-all hover:scale-105`}
                 >
-                  <div className="text-3xl mb-1">{option.emoji}</div>
+                  <div className="text-3xl mb-1">{(option as any).emoji || (option as any).icon}</div>
                   <p className="text-xs font-medium">{option.label}</p>
                 </button>
               ))}

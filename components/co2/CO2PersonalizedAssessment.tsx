@@ -81,11 +81,11 @@ export default function CO2PersonalizedAssessment() {
       setCurrentStep(currentStep + 1);
     } else {
       // Save to localStorage
-      const assessmentData: AssessmentData = {
+      const assessmentData = {
         ...newAnswers,
         completed: true,
         timestamp: new Date().toISOString()
-      };
+      } as AssessmentData;
       localStorage.setItem('co2_assessment', JSON.stringify(assessmentData));
       
       // Trigger page personalization
