@@ -6,21 +6,45 @@ declare global {
 
 // Helper function to safely track events
 export const fbEvent = (eventName: string, parameters?: any) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    console.log(`📊 Facebook Pixel Event: ${eventName}`, parameters);
-    window.fbq('track', eventName, parameters);
-  } else {
-    console.warn(`⚠️ Facebook Pixel not loaded yet. Attempted to track: ${eventName}`);
+  if (typeof window !== 'undefined') {
+    // Try immediately
+    if (window.fbq) {
+      console.log(`📊 Facebook Pixel Event: ${eventName}`, parameters);
+      window.fbq('track', eventName, parameters);
+    } else {
+      console.warn(`⚠️ Facebook Pixel not loaded yet. Retrying: ${eventName}`);
+      // Retry after a delay
+      setTimeout(() => {
+        if (window.fbq) {
+          console.log(`📊 Facebook Pixel Event (delayed): ${eventName}`, parameters);
+          window.fbq('track', eventName, parameters);
+        } else {
+          console.error(`❌ Facebook Pixel still not loaded for: ${eventName}`);
+        }
+      }, 2000);
+    }
   }
 };
 
 // Custom event helper
 export const fbCustomEvent = (eventName: string, parameters?: any) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    console.log(`📊 Facebook Pixel Custom Event: ${eventName}`, parameters);
-    window.fbq('trackCustom', eventName, parameters);
-  } else {
-    console.warn(`⚠️ Facebook Pixel not loaded yet. Attempted custom event: ${eventName}`);
+  if (typeof window !== 'undefined') {
+    // Try immediately
+    if (window.fbq) {
+      console.log(`📊 Facebook Pixel Custom Event: ${eventName}`, parameters);
+      window.fbq('trackCustom', eventName, parameters);
+    } else {
+      console.warn(`⚠️ Facebook Pixel not loaded yet. Retrying custom: ${eventName}`);
+      // Retry after a delay
+      setTimeout(() => {
+        if (window.fbq) {
+          console.log(`📊 Facebook Pixel Custom Event (delayed): ${eventName}`, parameters);
+          window.fbq('trackCustom', eventName, parameters);
+        } else {
+          console.error(`❌ Facebook Pixel still not loaded for custom: ${eventName}`);
+        }
+      }, 2000);
+    }
   }
 };
 
