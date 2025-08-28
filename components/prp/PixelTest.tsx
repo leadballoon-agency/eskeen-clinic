@@ -10,22 +10,25 @@ declare global {
 
 export default function PixelTest() {
   const testPixelEvents = () => {
-    console.log('🧪 Testing Facebook Pixel Events...');
-    console.log('Window.fbq exists?', typeof window.fbq);
+    console.log('🧪 Firing CompleteAssessment events for Facebook to recognize...');
     
-    // Test direct fbq call
-    if (window.fbq) {
-      console.log('📌 Calling fbq directly...');
-      window.fbq('track', 'Lead', { value: 100, currency: 'GBP' });
-      window.fbq('trackCustom', 'TestEvent', { test: true });
-    }
+    // Fire multiple CompleteAssessment events with different values
+    // This helps Facebook recognize it as a conversion event
+    FacebookEvents.CompleteAssessment('PRP Hair Loss', 'High Match', 699);
+    setTimeout(() => {
+      FacebookEvents.CompleteAssessment('PRP Facial', 'Good Match', 450);
+    }, 1000);
+    setTimeout(() => {
+      FacebookEvents.CompleteAssessment('PRP Hair', 'Excellent Match', 175);
+    }, 2000);
+    setTimeout(() => {
+      FacebookEvents.Lead(450);
+    }, 3000);
+    setTimeout(() => {
+      FacebookEvents.StartAssessment('PRP Test');
+    }, 4000);
     
-    // Test via our wrapper functions
-    FacebookEvents.Lead(500);
-    FacebookEvents.StartAssessment('Test PRP');
-    FacebookEvents.CompleteAssessment('Test PRP', 'Test Result', 175);
-    
-    alert('Check console for Facebook Pixel events. You should see test events fired.');
+    alert('Fired 5 conversion events! Check Facebook Events Manager in 5-10 minutes.');
   };
 
   return (
@@ -34,7 +37,7 @@ export default function PixelTest() {
         onClick={testPixelEvents}
         className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 text-sm"
       >
-        Test FB Pixel
+        Fire Test Conversions
       </button>
     </div>
   );

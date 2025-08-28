@@ -14,6 +14,7 @@ import {
 } from '@/components/prp';
 import PRPBeforeAfter from '@/components/prp/PRPBeforeAfter';
 import { FacebookEvents } from '@/lib/facebook-events';
+import PixelTest from '@/components/prp/PixelTest';
 
 export default function PRPPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,6 +46,7 @@ export default function PRPPage() {
         <PRPFAQ />
         <PRPCTA />
       </main>
+      <PixelTest />
     </>
   );
 }
