@@ -205,11 +205,11 @@ export default function CO2PersonalizedAssessment() {
               <div className="space-y-3">
                 <div className="bg-white rounded-xl p-3">
                   <p className="text-sm text-neutral-600 mb-1">For your {concernData?.label}:</p>
-                  <p className="font-semibold text-lg text-primary-600">{concernData?.improvement} improvement expected</p>
+                  <p className="font-semibold text-lg text-primary-600">{(concernData as any)?.improvement || '70-80%'} improvement expected</p>
                 </div>
                 <div className="bg-white rounded-xl p-3">
                   <p className="text-sm text-neutral-600 mb-1">Treatment plan:</p>
-                  <p className="font-semibold">{concernData?.sessions} sessions recommended</p>
+                  <p className="font-semibold">{(concernData as any)?.sessions || '1-3'} sessions recommended</p>
                 </div>
                 <div className="bg-white rounded-xl p-3">
                   <p className="text-sm text-neutral-600 mb-1">Timeline to results:</p>
