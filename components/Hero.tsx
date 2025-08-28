@@ -103,7 +103,7 @@ export default function Hero() {
                   <div className="bg-white p-3 rounded-lg shadow-2xl">
                     <div className="w-56 h-72 overflow-hidden rounded">
                       <img
-                        src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=500&fit=crop"
+                        src="/images/Mavra.jpg"
                         alt="Nurse Elanda"
                         className="w-full h-full object-cover"
                       />
@@ -115,18 +115,18 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Movra's Polaroid - tilted right, overlapping */}
+                {/* Mavra's Polaroid - tilted right, overlapping */}
                 <div className="absolute right-0 transform rotate-6 hover:rotate-0 transition-all duration-500 hover:z-20 hover:scale-105">
                   <div className="bg-white p-3 rounded-lg shadow-2xl">
                     <div className="w-56 h-72 overflow-hidden rounded">
                       <img
-                        src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop"
-                        alt="Movra"
+                        src="/images/Elanda.jpg"
+                        alt="Mavra"
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="pt-3 pb-2 text-center">
-                      <p className="font-serif text-2xl text-neutral-700 italic">𝓜𝓸𝓿𝓻𝓪</p>
+                      <p className="font-serif text-2xl text-neutral-700 italic">𝓜𝓪𝓿𝓻𝓪</p>
                       <p className="text-xs text-neutral-500">Licensed Prescriber</p>
                     </div>
                   </div>

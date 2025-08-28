@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
 
 export default function PRPAssessment() {
   const [step, setStep] = useState(0);
@@ -51,11 +52,35 @@ export default function PRPAssessment() {
   ];
 
   const handleAnswer = (value: string) => {
-    setAnswers({ ...answers, [questions[step].id]: value });
+    const newAnswers = { ...answers, [questions[step].id]: value };
+    setAnswers(newAnswers);
+    
+    // Track first interaction (assessment start)
+    if (step === 0) {
+      FacebookEvents.StartAssessment('PRP Therapy');
+    }
+    
     if (step < questions.length - 1) {
       setStep(step + 1);
     } else {
       setShowResult(true);
+      
+      // Track assessment completion
+      const concern = newAnswers.concern;
+      const commitment = newAnswers.commitment;
+      
+      // Calculate potential value based on commitment level
+      let potentialValue = 175; // single session
+      if (commitment === 'package3') potentialValue = 450;
+      else if (commitment === 'package6') potentialValue = 699;
+      
+      // Track completion with details
+      FacebookEvents.CompleteAssessment('PRP Therapy', concern, potentialValue);
+      
+      // Track as a high-value lead if showing interest in packages
+      if (commitment === 'package3' || commitment === 'package6') {
+        FacebookEvents.Lead(potentialValue);
+      }
     }
   };
 
@@ -131,6 +156,7 @@ export default function PRPAssessment() {
               href="https://www.treatwell.co.uk/place/eskeen-clinic/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => FacebookEvents.ClickBookNow(recommendation.treatment, 'PRP Assessment Result')}
               className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-100 text-center"
             >
               Book Your Consultation

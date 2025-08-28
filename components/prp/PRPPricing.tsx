@@ -1,6 +1,13 @@
 'use client';
 
+import { useEffect } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+
 export default function PRPPricing() {
+  useEffect(() => {
+    // Track when users view PRP pricing
+    FacebookEvents.ViewPricing('PRP Therapy', 175);
+  }, []);
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

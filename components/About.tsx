@@ -15,7 +15,7 @@ export default function About() {
     'Non-Surgical Rhinoplasty',
   ];
 
-  const movraSpecialties = [
+  const mavraSpecialties = [
     'Facial Balancing',
     'Lips, Chin, Cheek & Jaw Fillers',
     'Skin Boosters & Polynucleotides',
@@ -39,7 +39,7 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/5] relative">
                 <img
-                  src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800&h=1000&fit=crop"
+                  src="/images/Elanda.jpg"
                   alt="Nurse Elanda - Advanced Aesthetics Practitioner"
                   className="w-full h-full object-cover"
                 />
@@ -98,12 +98,12 @@ export default function About() {
           </div>
         </div>
 
-        {/* Movra */}
+        {/* Mavra */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 space-y-6">
             <div>
               <h3 className="font-display text-3xl font-bold">
-                Movra
+                Mavra
                 <span className="block text-xl text-primary-600 font-normal mt-2">
                   Advanced Aesthetician & Prescriber
                 </span>
@@ -124,7 +124,7 @@ export default function About() {
             <div className="space-y-3">
               <h4 className="font-bold text-lg">Specialisations</h4>
               <ul className="grid grid-cols-2 gap-2">
-                {movraSpecialties.map((specialty, index) => (
+                {mavraSpecialties.map((specialty, index) => (
                   <li key={index} className="flex items-center text-neutral-700">
                     <svg className="w-5 h-5 text-primary-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -147,8 +147,8 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/5] relative">
                 <img
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=1000&fit=crop"
-                  alt="Movra - Advanced Aesthetician & Prescriber"
+                  src="/images/Mavra.jpg"
+                  alt="Mavra - Advanced Aesthetician & Prescriber"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-100/10 to-primary-300/10"></div>

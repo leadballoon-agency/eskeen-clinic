@@ -195,6 +195,63 @@ export default function PRPResults() {
             </div>
           </div>
         </div>
+
+        {/* Trust Section with Practitioners */}
+        <div className="mt-16 bg-white rounded-3xl shadow-xl p-8 max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-2">Trusted by 1000+ Clients</h3>
+            <p className="text-neutral-600">Your PRP treatment is performed by certified experts</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex items-center space-x-4">
+              <img
+                src="/images/Elanda.jpg"
+                alt="Nurse Elanda"
+                className="w-20 h-20 rounded-full object-cover border-4 border-primary-100"
+              />
+              <div>
+                <h4 className="font-bold">Nurse Elanda</h4>
+                <p className="text-sm text-neutral-600">9 Years Experience</p>
+                <div className="flex text-yellow-400 text-sm mt-1">
+                  {'★★★★★'}
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <img
+                src="/images/Mavra.jpg"
+                alt="Mavra"
+                className="w-20 h-20 rounded-full object-cover border-4 border-primary-100"
+              />
+              <div>
+                <h4 className="font-bold">Mavra</h4>
+                <p className="text-sm text-neutral-600">Licensed Prescriber</p>
+                <div className="flex text-yellow-400 text-sm mt-1">
+                  {'★★★★★'}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-neutral-200">
+            <div className="grid grid-cols-3 text-center">
+              <div>
+                <p className="text-3xl font-bold gradient-text">500+</p>
+                <p className="text-sm text-neutral-600">PRP Treatments</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold gradient-text">95%</p>
+                <p className="text-sm text-neutral-600">Satisfaction Rate</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold gradient-text">5.0</p>
+                <p className="text-sm text-neutral-600">Treatwell Rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

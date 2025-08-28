@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function CO2ComingSoon() {
+export default function TreatmentVoting() {
   const [votes, setVotes] = useState({
     co2: 342,
     morpheus8: 218,

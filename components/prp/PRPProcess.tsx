@@ -111,6 +111,74 @@ export default function PRPProcess() {
             </div>
           </div>
         </div>
+
+        {/* Expert Practitioners Section */}
+        <div className="mt-16 sm:mt-20">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">
+            Your PRP Experts
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Elanda */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3] relative">
+                <img
+                  src="/images/Elanda.jpg"
+                  alt="Nurse Elanda - PRP Specialist"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h4 className="text-xl font-bold">Nurse Elanda</h4>
+                  <p className="text-sm text-white/90">PRP Hair Specialist</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  With 9 years of medical experience and specialization in PRP therapy, 
+                  I've helped hundreds restore their confidence through natural hair regeneration.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
+                    Hair Restoration Expert
+                  </span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
+                    500+ PRP Treatments
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mavra */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3] relative">
+                <img
+                  src="/images/Mavra.jpg"
+                  alt="Mavra - PRP Specialist"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h4 className="text-xl font-bold">Mavra</h4>
+                  <p className="text-sm text-white/90">Facial PRP Expert</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Advanced Aesthetician with 9 years experience, I specialize in vampire facials 
+                  and natural skin rejuvenation using cutting-edge PRP techniques.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
+                    Vampire Facial Expert
+                  </span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
+                    Licensed Prescriber
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

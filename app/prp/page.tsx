@@ -13,6 +13,7 @@ import {
   PRPCTA
 } from '@/components/prp';
 import PRPBeforeAfter from '@/components/prp/PRPBeforeAfter';
+import { FacebookEvents } from '@/lib/facebook-events';
 
 export default function PRPPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,6 +24,10 @@ export default function PRPPage() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    
+    // Track PRP page view
+    FacebookEvents.ViewContent('PRP Therapy Page', 'Treatment Page');
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
