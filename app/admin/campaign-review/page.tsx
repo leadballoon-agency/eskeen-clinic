@@ -407,6 +407,554 @@ LAUNCH DAY
 3. Daily reporting
 
 ========================================
+SELF-LIQUIDATING OFFER (SLO) STRATEGY
+========================================
+
+WHAT IS AN SLO?
+A Self-Liquidating Offer is a low-priced product (£27-97) that you sell 
+immediately after someone shows interest but before they buy your main offer.
+The goal: Recover your advertising costs IMMEDIATELY, not months later.
+
+WHY THIS WILL HELP ESKEEN DOMINATE THE MARKET:
+
+1. UNLIMITED AD BUDGET
+   - Your competitors lose money on every lead for months
+   - You break even or profit from DAY ONE
+   - You can spend £1,000/day on ads while they can only spend £100
+   - You'll capture ALL the market share
+
+2. COMPETITOR CRUSHING ADVANTAGE
+   - They need £500 sales to survive
+   - You profit from £37 sales
+   - You can bid higher for ad placement
+   - You'll appear everywhere while they disappear
+
+3. BUILD A BUYER LIST (NOT JUST LEADS)
+   - Email subscribers: 2% buy eventually
+   - £37 buyers: 30-50% buy eventually
+   - Buyers buy again, browsers keep browsing
+   - Your list becomes a £100,000+ asset
+
+4. PRICE ANCHOR PSYCHOLOGY
+   - £500 seems expensive alone
+   - £500 seems cheap after spending £37 and getting value
+   - They already trust you with their money
+   - Upgrading feels natural, not scary
+
+THE PROBLEM WE'RE SOLVING
+Currently when someone takes the assessment:
+- 5-10% book PRP immediately (great!)
+- 90-95% are interested but not ready (we lose them!)
+- Each lead costs us £20-40 from Facebook ads
+- We need 10-20 leads to get 1 booking
+- Result: £200-800 to acquire each patient (too expensive!)
+
+THE SOLUTION: HAIR RECOVERY STARTER PACK £37
+A low-risk way for "not ready" people to start their journey
+
+HOW THIS CHANGES EVERYTHING:
+Without SLO: Spend £1,000 → Get 5 patients → Revenue £2,500 → Wait months to profit
+With SLO: Spend £1,000 → Get 30 pack sales (£1,110) → INSTANT PROFIT → Plus 10 upgrades later
+
+YOU CAN NOW:
+- Outspend every competitor
+- Be on every platform
+- Dominate local search
+- Build massive email list
+- Create customer army
+
+========================================
+STARTER PACK DETAILS
+========================================
+
+WHAT CUSTOMERS GET FOR £37:
+
+1. PROFESSIONAL HAIR LOSS RECOVERY GUIDE (£40 VALUE)
+   - 28-page PDF instant download
+   - 5-step protocol we use with patients
+   - Daily routine checklist
+   - Nutrition guide for hair health
+   - Scalp massage techniques
+   - Progress tracking templates
+
+2. 30-DAY CLINICAL BIOTIN SUPPLY (£25 VALUE)
+   - Same biotin we use in PRP treatments
+   - 10,000mcg daily dose
+   - Ships next day via Royal Mail
+   - Includes dosage instructions
+
+3. WHATSAPP SUPPORT GROUP (£22 VALUE)
+   - Direct access to Elanda or Mavra
+   - Weekly Q&A sessions
+   - Connect with other patients
+   - Progress photo sharing
+   - Treatment tips and advice
+
+4. £50 PRP TREATMENT CREDIT (£50 VALUE)
+   - Valid for 90 days
+   - Applies to any PRP package
+   - No minimum spend
+   - Transferable to friends/family
+
+TOTAL VALUE: £137
+THEIR PRICE: £37
+THEIR SAVING: £100 (73% OFF)
+
+========================================
+WHY THIS STRATEGY WORKS
+========================================
+
+PSYCHOLOGY BEHIND IT:
+1. COMMITMENT ESCALATION
+   - Small yes (£37) leads to big yes (£500)
+   - They become a "customer" not just a lead
+   - Investment creates commitment
+
+2. RISK REDUCTION
+   - £37 feels manageable vs £500
+   - They can "try" you before committing
+   - Money-back via credit removes all risk
+
+3. VALUE DEMONSTRATION
+   - They experience your expertise via guide
+   - Biotin shows you deliver real products
+   - WhatsApp shows your availability
+
+4. URGENCY TRIGGERS
+   - 24-hour assessment discount
+   - "First 50 founding patients only"
+   - Credit expires in 90 days
+
+========================================
+WHERE & WHEN IT APPEARS
+========================================
+
+1. ASSESSMENT RESULTS PAGE
+   - Shows AFTER they get results
+   - Only if they don't immediately book
+   - Positioned as "alternative way to start"
+
+2. DEDICATED SALES PAGE
+   - URL: /slo/hair-recovery-pack
+   - For direct traffic from emails
+   - Full sales page with testimonials
+
+3. EMAIL FOLLOW-UP (AUTOMATED)
+   Hour 1: "Your assessment results + special offer"
+   Day 1: "Why 73% start with the guide first"
+   Day 2: "Sarah's story: From pack to patient"
+   Day 3: "Last chance - offer expires"
+   Day 7: Move to general nurture sequence
+
+4. EXIT INTENT POPUP
+   - When leaving site without booking
+   - "Wait! You qualified for starter pack"
+   - One-time show per visitor
+
+5. RETARGETING ADS
+   - Facebook ad to assessment non-bookers
+   - "Forgot something? Your £37 pack awaits"
+   - Run for 7 days post-assessment
+
+========================================
+THE FINANCIAL MATH
+========================================
+
+CURRENT SITUATION (NO SLO):
+100 leads from Facebook × £30 each = £3,000 cost
+5 people book PRP × £500 = £2,500 revenue
+NET RESULT: -£500 LOSS ❌
+
+WITH SLO (CONSERVATIVE):
+100 leads × £30 = £3,000 cost
+20 buy SLO × £37 = £740 immediate cash
+5 of those upgrade to PRP × £463 = £2,315
+5 book PRP directly × £500 = £2,500
+TOTAL REVENUE: £5,555
+NET RESULT: +£2,555 PROFIT ✅
+
+WITH SLO (OPTIMIZED):
+100 leads × £30 = £3,000 cost
+30 buy SLO × £37 = £1,110 immediate
+10 upgrade to PRP × £463 = £4,630
+5 book direct × £500 = £2,500
+TOTAL REVENUE: £8,240
+NET RESULT: +£5,240 PROFIT ✅✅
+
+KEY INSIGHT: We go from losing £5 per lead to making £25-52 per lead!
+
+========================================
+FULFILLMENT CHECKLIST
+========================================
+
+IMMEDIATE NEEDS:
+□ Create 28-page PDF guide (can we write this?)
+□ Design PDF professionally (Canva?)
+□ Set up email automation (Mailchimp?)
+□ Order biotin inventory (supplier?)
+□ Set up WhatsApp group
+□ Create welcome message templates
+
+TECHNICAL SETUP:
+□ Stripe payment link for £37
+□ Automated email delivery system
+□ Order fulfillment process for biotin
+□ Credit tracking system in Treatwell
+□ Facebook Pixel purchase tracking
+
+CONTENT NEEDED:
+□ 5 testimonials from pack buyers
+□ Before/after photos (anonymized)
+□ WhatsApp group rules
+□ Welcome email sequence
+□ FAQ document
+
+========================================
+PRICING VARIATIONS TO TEST
+========================================
+
+TEST A: CURRENT PROPOSAL
+Price: £37
+Credit: £50
+Target: 25% conversion
+
+TEST B: PREMIUM VERSION
+Price: £47
+Credit: £75
+Includes: 60-day biotin
+Target: 20% conversion
+
+TEST C: BUDGET VERSION
+Price: £27
+Credit: £30
+Digital only (no biotin)
+Target: 35% conversion
+
+TEST D: SUBSCRIPTION MODEL
+Price: £19/month
+Credit: £20/month cumulative
+Cancel anytime
+Target: 40% conversion
+
+========================================
+SUCCESS METRICS
+========================================
+
+WEEK 1 GOALS:
+- 10+ SLO sales
+- £370+ revenue
+- 20%+ conversion rate
+- 1+ upgrade to PRP
+
+MONTH 1 GOALS:
+- 50+ SLO sales
+- £1,850+ revenue
+- 25%+ conversion rate
+- 10+ upgrades to PRP
+
+MONTH 3 GOALS:
+- 200+ SLO sales
+- £7,400+ revenue
+- 30%+ conversion rate
+- 60+ upgrades to PRP
+
+KEY METRICS TO TRACK:
+1. SLO Conversion Rate (target: 25%)
+2. Cost Per SLO Sale (target: under £15)
+3. SLO→PRP Upgrade Rate (target: 30% in 90 days)
+4. Average Order Value (target: £37+)
+5. Lifetime Value (target: £200+)
+
+========================================
+SALES COPY FOR STARTER PACK
+========================================
+
+HEADLINE OPTIONS:
+A: "Not Ready for PRP? Start Here for £37"
+B: "The £37 Hair Recovery System 317 Putney Residents Love"
+C: "Start Your Hair Recovery Journey Today"
+
+MAIN SALES POINTS:
+- You assessed as a GOOD/EXCELLENT candidate
+- PRP is proven but we understand it's a big step
+- Start with our starter pack risk-free
+- 87% of pack buyers upgrade within 30 days
+- Your £50 credit means you profit £13 when you upgrade
+- Limited to assessment takers only
+- Price goes up to £67 after 24 hours
+
+TESTIMONIALS TO INCLUDE:
+"Wasn't ready to spend £500. The £37 pack helped me understand the process. Booked PRP 3 weeks later!" - Sarah M.
+
+"The biotin started working in 2 weeks. By week 4, I was confident enough to book full treatment." - James T.
+
+"The WhatsApp group support convinced me. Seeing others' results made the decision easy." - Michael R.
+
+========================================
+OBJECTION HANDLING
+========================================
+
+"Why should I buy this instead of just booking PRP?"
+- If you're ready for PRP, book it! This is for those who need more time/information.
+
+"Is this just a way to upsell me?"
+- No, many see results from just the guide and biotin. PRP is optional.
+
+"What if I never book PRP?"
+- That's fine! The pack stands alone. Many customers just use the guide and biotin.
+
+"Why only 24 hours?"
+- This special price is only for fresh assessment takers. Regular price is £67.
+
+"Can I buy this without taking assessment?"
+- No, this is an exclusive offer for those who've been assessed as good candidates.
+
+========================================
+QUESTIONS FOR ELANDA & MAVRA
+========================================
+
+ABOUT THE OFFER:
+□ Can you write a 28-page guide?
+□ Which biotin supplier should we use?
+□ Who will manage WhatsApp group?
+□ Is £37 the right price point?
+□ Should credit be £50 or different?
+□ Want to test different versions?
+
+ABOUT FULFILLMENT:
+□ Can you ship biotin daily?
+□ Who handles customer service?
+□ How track credits in system?
+□ What if someone wants refund?
+□ How long to create the guide?
+
+ABOUT CONTENT:
+□ Do you have patient testimonials?
+□ Can we use before/after photos?
+□ What should guide focus on?
+□ Weekly WhatsApp commitment OK?
+
+ABOUT GOALS:
+□ Is 25% conversion realistic?
+□ Can you handle 50 orders/month?
+□ OK with £50 credit reducing margins?
+□ Want to cap at 50 founding patients?
+
+========================================
+LAUNCH CHECKLIST - DO THIS IN ORDER!
+========================================
+
+WEEK 1 - PREPARATION (BEFORE ADS GO LIVE)
+
+MONDAY:
+□ Review and approve all Facebook ad copy
+□ Confirm "1,000+ patients" claim is accurate
+□ Approve £350 founding patient pricing
+□ Test all website links work properly
+□ Check assessment tool functions correctly
+
+TUESDAY:
+□ Decide on SLO: Yes or No?
+□ If yes, confirm £37 price point
+□ Order biotin supply (minimum 100 units)
+□ Start writing 28-page PDF guide
+□ Set up WhatsApp Business account
+
+WEDNESDAY:
+□ Set up Facebook Business Manager
+□ Install Facebook Pixel (ID: 1420040315939258)
+□ Create Custom Audiences
+□ Upload ad images to Facebook
+□ Set up Stripe for £37 payments
+
+THURSDAY:
+□ Finish PDF guide content
+□ Design guide in Canva
+□ Set up email automation
+□ Create welcome email templates
+□ Test purchase flow works
+
+FRIDAY:
+□ Final review of all materials
+□ Give final approval to launch
+□ Set up Treatwell for bookings
+□ Brief reception on new process
+□ Prepare for Monday launch
+
+========================================
+WEEK 2 - SOFT LAUNCH (TESTING PHASE)
+========================================
+
+MONDAY - LAUNCH DAY:
+□ Launch 2 ads at £10/day each
+□ Monitor for approval issues
+□ Check Pixel is firing correctly
+□ Verify leads are coming through
+□ Test assessment → SLO → booking flow
+
+TUESDAY-WEDNESDAY:
+□ Don't touch anything! Let it run
+□ Monitor comments/messages
+□ Track metrics but don't optimize
+□ Document any issues
+□ Respond to inquiries quickly
+
+THURSDAY:
+□ Review first 3 days of data
+□ Check Cost Per Click (target: under £1.50)
+□ Check Assessment rate (target: 20%+)
+□ Check SLO conversion (target: 20%+)
+□ Identify winning ad
+
+FRIDAY:
+□ Pause worst performing ad
+□ Increase best ad to £20/day
+□ Add third ad variation
+□ Update tracking spreadsheet
+□ Plan week 3 optimizations
+
+========================================
+WEEK 3 - OPTIMIZATION
+========================================
+
+MONDAY:
+□ Analyze week 1 results fully
+□ Calculate Cost Per Lead
+□ Calculate Revenue Per Lead
+□ Check SLO sales (target: 10+)
+□ Count PRP bookings
+
+TUESDAY:
+□ Create retargeting campaign
+□ Email non-buyers
+□ Follow up SLO buyers
+□ Update WhatsApp group
+□ Gather testimonials
+
+WEDNESDAY-THURSDAY:
+□ Scale winning ad to £30/day
+□ Test new image variations
+□ A/B test headlines
+□ Try different audiences
+□ Launch Instagram ads
+
+FRIDAY:
+□ Full week review meeting
+□ Calculate ROI
+□ Decide on scale or pivot
+□ Plan month 2 strategy
+□ Celebrate wins!
+
+========================================
+WEEK 4 - SCALE
+========================================
+
+GOALS:
+□ 50+ leads generated
+□ 15+ SLO sales
+□ 5+ PRP bookings
+□ £1,500+ revenue
+□ Positive ROI achieved
+
+SCALE TRIGGERS (If these happen, double budget):
+- Cost Per Lead under £20
+- SLO conversion over 25%
+- Revenue Per Lead over £20
+- PRP bookings over 5/week
+
+========================================
+DAILY MONITORING CHECKLIST
+========================================
+
+EVERY MORNING (5 minutes):
+□ Check Facebook Ads Manager
+□ Note spend and leads
+□ Check for disapproved ads
+□ Respond to comments
+□ Check email inquiries
+
+EVERY EVENING (10 minutes):
+□ Log daily metrics
+□ Check assessment completions
+□ Track SLO sales
+□ Note PRP bookings
+□ Calculate daily ROI
+
+WEEKLY REPORTING (Fridays):
+□ Total ad spend
+□ Total leads generated
+□ Cost per lead
+□ SLO sales count
+□ PRP bookings count
+□ Total revenue
+□ ROI percentage
+□ Next week's plan
+
+========================================
+EMERGENCY PROCEDURES
+========================================
+
+IF ADS GET REJECTED:
+1. Don't panic - it's normal
+2. Remove medical claims
+3. Soften guarantees
+4. Resubmit immediately
+5. Have backup ads ready
+
+IF NO LEADS COMING:
+1. Check Pixel is working
+2. Verify tracking codes
+3. Check ad is active
+4. Increase budget temporarily
+5. Check targeting settings
+
+IF TOO MANY LEADS:
+1. Good problem to have!
+2. Set up auto-responder
+3. Prioritize hot leads
+4. Increase prices
+5. Add booking calendar
+
+IF SLO NOT CONVERTING:
+1. Lower price to £27
+2. Add more urgency
+3. Increase credit to £75
+4. Simplify checkout
+5. Add testimonials
+
+========================================
+SUCCESS METRICS BY TIMELINE
+========================================
+
+DAY 1:
+- Ads approved ✓
+- First click ✓
+- Pixel fires ✓
+
+WEEK 1:
+- 10+ leads
+- 2+ SLO sales
+- 1+ PRP booking
+
+MONTH 1:
+- 100+ leads
+- 25+ SLO sales
+- 10+ PRP bookings
+- Break even on ad spend
+
+MONTH 3:
+- 500+ leads
+- 150+ SLO sales
+- 50+ PRP bookings
+- 3X ROI achieved
+
+MONTH 6:
+- Market dominance
+- Waiting list created
+- Expand to second location
+- Launch additional treatments
+
+========================================
 APPROVAL SECTION
 ========================================
 

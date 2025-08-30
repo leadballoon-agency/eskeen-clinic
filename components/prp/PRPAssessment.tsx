@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
+import SLOOffer from '@/components/SLOOffer';
 
 export default function PRPAssessment() {
   const [step, setStep] = useState(0);
@@ -173,6 +174,12 @@ export default function PRPAssessment() {
             * This is an initial assessment. Nurse Elanda will provide a detailed treatment plan during your consultation.
           </p>
         </div>
+
+        {/* SLO Offer for those not ready to book */}
+        <SLOOffer 
+          assessmentScore={85} 
+          treatment={recommendation.treatment}
+        />
       </div>
     );
   }
