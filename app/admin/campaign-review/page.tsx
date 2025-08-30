@@ -483,7 +483,6 @@ END OF DOCUMENT
 
           <pre className="prose prose-gray max-w-none whitespace-pre-wrap font-mono text-sm">
 {reviewContent}</pre>
-          </div>
         </div>
       </div>
     </div>
