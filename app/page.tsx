@@ -9,6 +9,7 @@ import ClinicGallery from '@/components/ClinicGallery';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Navigation from '@/components/Navigation';
+import { FacebookEvents } from '@/lib/facebook-events';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +20,10 @@ export default function Home() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    
+    // Track homepage view
+    FacebookEvents.ViewContent('Homepage', 'Main');
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

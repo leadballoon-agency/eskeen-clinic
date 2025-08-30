@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import InteractiveConsultation from './InteractiveConsultation';
 import ComingSoonVoting from './ComingSoonVoting';
+import { FacebookEvents } from '@/lib/facebook-events';
 
 const services = [
   {
@@ -113,7 +114,10 @@ export default function Services() {
               className={`group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 transition-all duration-500 cursor-pointer flex flex-col h-full ${
                 activeService === service.id ? 'shadow-2xl sm:scale-105' : 'shadow-lg hover:shadow-xl'
               }`}
-              onClick={() => setActiveService(service.id)}
+              onClick={() => {
+                setActiveService(service.id);
+                FacebookEvents.ViewContent(`${service.title} Service`, 'Service Card');
+              }}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 rounded-2xl sm:rounded-3xl transition-opacity group-hover:opacity-10`}></div>
               
@@ -149,6 +153,7 @@ export default function Services() {
                     onClick={(e) => {
                       e.stopPropagation();
                       setShowAssessment(true);
+                      FacebookEvents.ClickBookNow(service.title, 'Service Card CTA');
                       setTimeout(() => {
                         document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
@@ -180,7 +185,10 @@ export default function Services() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <button
-                    onClick={() => setShowAssessment(true)}
+                    onClick={() => {
+                      setShowAssessment(true);
+                      FacebookEvents.StartAssessment('General Assessment');
+                    }}
                     className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full font-medium text-base sm:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     Start Your Assessment →

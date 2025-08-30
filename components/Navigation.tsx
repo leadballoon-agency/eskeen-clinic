@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { FacebookEvents } from '@/lib/facebook-events';
 
 interface NavigationProps {
   scrolled: boolean;
@@ -51,6 +52,7 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
               <a
                 key={link.href}
                 href={link.href}
+                onClick={() => FacebookEvents.ViewContent(`Navigation: ${link.label}`, 'Menu Click')}
                 className={`${textColor} ${hoverColor} transition-colors font-medium`}
               >
                 {link.label}
@@ -62,6 +64,7 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
             href="https://www.treatwell.co.uk/place/eskeen-clinic/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => FacebookEvents.ClickBookNow('Treatwell', 'Navigation Header')}
             className="hidden md:inline-flex bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
             Book Now
@@ -96,6 +99,7 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
                 href="https://www.treatwell.co.uk/place/eskeen-clinic/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => FacebookEvents.ClickBookNow('Treatwell', 'Mobile Navigation')}
                 className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium text-center"
               >
                 Book Now

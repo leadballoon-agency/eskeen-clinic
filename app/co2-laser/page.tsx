@@ -9,6 +9,7 @@ import CO2ResultsStories from '@/components/co2/CO2ResultsStories';
 import CO2Process from '@/components/co2/CO2Process';
 import CO2DynamicPricing from '@/components/co2/CO2DynamicPricing';
 import CO2FAQ from '@/components/co2/CO2FAQ';
+import { FacebookEvents } from '@/lib/facebook-events';
 
 export default function CO2LaserPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +20,10 @@ export default function CO2LaserPage() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    
+    // Track CO2 page view
+    FacebookEvents.ViewContent('CO2 Laser Page', 'Treatment Page');
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

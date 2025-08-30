@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
 
 export default function Hero() {
   const videoRef = useRef<HTMLDivElement>(null);
@@ -57,6 +58,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#consultation"
+                onClick={() => FacebookEvents.ClickBookNow('General Assessment', 'Homepage Hero')}
                 className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 sm:py-3.5 rounded-full font-medium text-sm sm:text-base hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 Start Assessment

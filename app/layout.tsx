@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import FacebookPixel from "./facebook-pixel";
+import ScrollTracker from "@/components/ScrollTracker";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
         <FacebookPixel />
+        <ScrollTracker />
         {children}
       </body>
     </html>

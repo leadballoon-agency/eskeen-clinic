@@ -1,5 +1,7 @@
 'use client';
 
+import { FacebookEvents } from '@/lib/facebook-events';
+
 export default function Contact() {
   const contactInfo = [
     {
@@ -95,6 +97,7 @@ export default function Contact() {
 
               <a
                 href="#consultation"
+                onClick={() => FacebookEvents.ClickBookNow('Consultation', 'Contact Section')}
                 className="mt-4 sm:mt-6 w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center"
               >
                 Start Your Consultation
