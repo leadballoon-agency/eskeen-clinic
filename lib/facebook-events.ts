@@ -117,5 +117,31 @@ export const FacebookEvents = {
       content_type: contentType,
       engagement_duration: duration,
       timestamp: new Date().toISOString()
-    })
+    }),
+  
+  // E-commerce events for SLO
+  InitiateCheckout: (value: number, currency: string, contentName: string) =>
+    fbEvent('InitiateCheckout', { 
+      value, 
+      currency, 
+      content_name: contentName, 
+      content_type: 'product',
+      num_items: 1
+    }),
+  
+  Purchase: (value: number, currency: string, contentName: string) =>
+    fbEvent('Purchase', { 
+      value, 
+      currency, 
+      content_name: contentName, 
+      content_type: 'product',
+      num_items: 1
+    }),
+  
+  // Engagement tracking
+  ScrollDepth: (percentage: number) => 
+    fbCustomEvent('ScrollDepth', { depth_percentage: percentage }),
+  
+  HighEngagement: () => 
+    fbCustomEvent('HighEngagementUser', { engaged: true })
 };
