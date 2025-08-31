@@ -179,7 +179,10 @@ function PRPAdvertorialContent() {
           </p>
 
           <p className="mb-8">
-            The breakthrough she's referring to? Platelet-Rich Plasma therapy - a treatment so effective that pharmaceutical companies have spent decades ensuring you've never heard of it.
+            {source === 'local' || source === 'founding' ? 
+              "The treatment we specialize in? Platelet-Rich Plasma therapy - a proven medical procedure that delivers permanent results using your body's own healing factors. No daily routines, no monthly prescriptions, just lasting restoration." :
+              "The breakthrough she's referring to? Platelet-Rich Plasma therapy - a treatment so effective that pharmaceutical companies have spent decades ensuring you've never heard of it."
+            }
           </p>
 
           <p className="text-xl font-bold text-primary-600 mb-8">
@@ -203,26 +206,56 @@ function PRPAdvertorialContent() {
             </button>
           </div>
 
-          <h2 className="text-3xl font-bold mt-12 mb-6">The 1910 Flexner Report: How Big Pharma Hijacked Medicine</h2>
+          {source === 'local' || source === 'founding' ? (
+            <>
+              <h2 className="text-3xl font-bold mt-12 mb-6">Why We Chose PRP Over Everything Else</h2>
+              
+              <p className="mb-6">
+                After years at London's leading clinics, we've seen every treatment available. Laser therapy, medications, transplants - we've witnessed their results firsthand. That's why we specialize in PRP.
+              </p>
+              
+              <p className="mb-6">
+                Here's what our experience has taught us: Most hair loss treatments are designed to keep you paying monthly. They work temporarily, then gradually lose effectiveness, keeping you dependent on prescriptions or repeated procedures.
+              </p>
+              
+              <p className="mb-8">
+                PRP is different. It's a medical procedure that uses your own blood's growth factors to reactivate dormant follicles. Three sessions over three months, then you're done. No daily routine, no monthly costs, just permanent restoration.
+              </p>
+              
+              <blockquote className="border-l-4 border-primary-500 pl-6 py-4 my-8 italic text-xl text-neutral-700">
+                "We opened our own practice because we believe everyone deserves access to treatments that actually work."
+                <footer className="text-base mt-2 not-italic">- Elanda & Mavra, Eskeen Clinic Founders</footer>
+              </blockquote>
+            </>
+          ) : (
+            <>
+              <h2 className="text-3xl font-bold mt-12 mb-6">The 1910 Flexner Report: How Big Pharma Hijacked Medicine</h2>
 
-          <p className="mb-6">
-            To understand how we got here, we need to go back to 1910. The Flexner Report fundamentally changed medical education in America and Europe, systematically closing natural medicine schools and establishing the pharmaceutical-academic complex we know today.
-          </p>
+              <p className="mb-6">
+                To understand how we got here, we need to go back to 1910. The Flexner Report fundamentally changed medical education in America and Europe, systematically closing natural medicine schools and establishing the pharmaceutical-academic complex we know today.
+              </p>
 
-          <p className="mb-6">
-            Abraham Flexner, funded by Carnegie and Rockefeller foundations, created a "coordinated relationship between academia and industry" that prioritized synthetic, patentable drugs over natural treatments.
-          </p>
+              <p className="mb-6">
+                Abraham Flexner, funded by Carnegie and Rockefeller foundations, created a "coordinated relationship between academia and industry" that prioritized synthetic, patentable drugs over natural treatments.
+              </p>
 
-          <p className="mb-8">
-            The result? Medical schools began teaching doctors to prescribe chemicals instead of harnessing the body's natural healing power.
-          </p>
+              <p className="mb-8">
+                The result? Medical schools began teaching doctors to prescribe chemicals instead of harnessing the body's natural healing power.
+              </p>
 
-          <blockquote className="border-l-4 border-primary-500 pl-6 py-4 my-8 italic text-xl text-neutral-700">
-            "It wasn't about better patient outcomes. It was about creating perpetual customers for patentable products."
-            <footer className="text-base mt-2 not-italic">- Dr. Sarah Chen, Medical Historian</footer>
-          </blockquote>
+              <blockquote className="border-l-4 border-primary-500 pl-6 py-4 my-8 italic text-xl text-neutral-700">
+                "It wasn't about better patient outcomes. It was about creating perpetual customers for patentable products."
+                <footer className="text-base mt-2 not-italic">- Dr. Sarah Chen, Medical Historian</footer>
+              </blockquote>
+            </>
+          )}
 
-          <h2 className="text-3xl font-bold mt-12 mb-6">Your Blood Holds The Key They Don't Want You To Find</h2>
+          <h2 className="text-3xl font-bold mt-12 mb-6">
+            {source === 'local' || source === 'founding' ? 
+              "How PRP Actually Works (The Science Made Simple)" :
+              "Your Blood Holds The Key They Don't Want You To Find"
+            }
+          </h2>
 
           <p className="mb-6">
             Here's what every London professional needs to understand: Your blood contains concentrated growth factors and healing proteins that can regenerate hair follicles and reverse aging at the cellular level.
@@ -254,7 +287,10 @@ function PRPAdvertorialContent() {
           <p className="text-xl font-bold mb-8">But there was a problem for pharmaceutical companies.</p>
 
           <p className="mb-8">
-            "You can't patent what nature already created," explains Elanda. "So while they spent billions developing synthetic drugs with potential side effects, the solution existed within patients' own bodies."
+            {source === 'local' || source === 'founding' ? 
+              "\"We've treated over 1,000 patients with PRP because it works,\" we explain to every consultation. \"While others push expensive daily treatments, we offer a permanent solution using your own body's healing power.\"" :
+              "\"You can't patent what nature already created,\" explains Elanda. \"So while they spent billions developing synthetic drugs with potential side effects, the solution existed within patients' own bodies.\""
+            }
           </p>
 
           <h2 className="text-3xl font-bold mt-12 mb-6">The Treatment Trap That's Costing You Thousands</h2>
