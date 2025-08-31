@@ -105,7 +105,7 @@ export default function Hero() {
                   <div className="bg-white p-3 rounded-lg shadow-2xl">
                     <div className="w-56 h-72 overflow-hidden rounded">
                       <img
-                        src="/images/Mavra.jpg"
+                        src="/images/Elanda.jpg"
                         alt="Nurse Elanda"
                         className="w-full h-full object-cover"
                       />
@@ -122,7 +122,7 @@ export default function Hero() {
                   <div className="bg-white p-3 rounded-lg shadow-2xl">
                     <div className="w-56 h-72 overflow-hidden rounded">
                       <img
-                        src="/images/Elanda.jpg"
+                        src="/images/Mavra.jpg"
                         alt="Mavra"
                         className="w-full h-full object-cover"
                       />
