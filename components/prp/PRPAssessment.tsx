@@ -59,6 +59,8 @@ export default function PRPAssessment() {
     // Track first interaction (assessment start)
     if (step === 0) {
       FacebookEvents.StartAssessment('PRP Therapy');
+      // Track as low-value lead for volume
+      FacebookEvents.Lead(1);
     }
     
     if (step < questions.length - 1) {
@@ -70,18 +72,16 @@ export default function PRPAssessment() {
       const concern = newAnswers.concern;
       const commitment = newAnswers.commitment;
       
-      // Calculate potential value based on commitment level
-      let potentialValue = 175; // single session
-      if (commitment === 'package3') potentialValue = 450;
-      else if (commitment === 'package6') potentialValue = 699;
+      // Track completion with moderate value for learning phase
+      let leadValue = 20; // base value for completion
+      if (commitment === 'package3') leadValue = 30;
+      else if (commitment === 'package6') leadValue = 40;
       
-      // Track completion with details
-      FacebookEvents.CompleteAssessment('PRP Therapy', concern, potentialValue);
+      // Track completion (we'll use actual prices later after learning phase)
+      FacebookEvents.CompleteAssessment('PRP Therapy', concern, leadValue);
       
-      // Track as a high-value lead if showing interest in packages
-      if (commitment === 'package3' || commitment === 'package6') {
-        FacebookEvents.Lead(potentialValue);
-      }
+      // Always track as lead for volume
+      FacebookEvents.Lead(leadValue);
     }
   };
 

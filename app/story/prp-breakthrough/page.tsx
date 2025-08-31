@@ -21,15 +21,19 @@ function PRPAdvertorialContent() {
       const scrollPercent = (window.scrollY / scrollHeight) * 100;
       setReadingProgress(scrollPercent);
       
-      // Track engagement milestones
+      // Track engagement milestones - optimized for learning phase
       if (scrollPercent > 50 && readingProgress <= 50) {
-        FacebookEvents.ViewContent('Advertorial 50% Read', 'Engagement');
+        // Don't track 50% - too easy to hit
       }
       if (scrollPercent > 75 && readingProgress <= 75) {
+        // 75% scroll shows real engagement
+        FacebookEvents.Lead(5); // Small value for volume
         FacebookEvents.ViewContent('Advertorial 75% Read', 'High Intent');
       }
       if (scrollPercent > 90 && readingProgress <= 90) {
-        FacebookEvents.Lead(350);
+        // 90% scroll is highly engaged user
+        FacebookEvents.Lead(10); // Higher value but still small
+        FacebookEvents.ViewContent('Advertorial 90% Read', 'Very High Intent');
       }
     };
     
@@ -53,8 +57,8 @@ function PRPAdvertorialContent() {
 
   const handleCTAClick = (location: string) => {
     FacebookEvents.ClickBookNow(`PRP Advertorial - ${location} - ${source}`, 'Advertorial CTA');
-    // Track as high-value lead
-    FacebookEvents.Lead(750);
+    // Track as lead with moderate value - they clicked through to assessment
+    FacebookEvents.Lead(15);
     // Navigate to PRP page
     router.push('/prp');
   };
