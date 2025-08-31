@@ -185,9 +185,11 @@ function PRPAdvertorialContent() {
             }
           </p>
 
-          <p className="text-xl font-bold text-primary-600 mb-8">
-            The reason is simple: You can't patent human blood.
-          </p>
+          {source !== 'local' && source !== 'founding' && (
+            <p className="text-xl font-bold text-primary-600 mb-8">
+              The reason is simple: You can't patent human blood.
+            </p>
+          )}
 
           {/* First CTA Box */}
           <div className="bg-gradient-to-br from-primary-50 to-white border-2 border-primary-200 rounded-2xl p-8 my-12">
@@ -348,18 +350,32 @@ function PRPAdvertorialContent() {
             </button>
           </div>
 
-          <h2 className="text-3xl font-bold mt-12 mb-6">Breaking Free: The Putney Solution</h2>
+          <h2 className="text-3xl font-bold mt-12 mb-6">
+            {source === 'local' || source === 'founding' ? 
+              "Our Approach: Simple, Proven, Effective" :
+              "Breaking Free: The Putney Solution"
+            }
+          </h2>
 
           <p className="mb-6">
-            But here's where the story gets interesting.
+            {source === 'local' || source === 'founding' ? 
+              "Here's what makes our approach different from other clinics:" :
+              "But here's where the story gets interesting."
+            }
           </p>
 
           <p className="mb-6">
-            Eskeen Clinic in Putney decided to break ranks with Big Pharma and offer PRP therapy directly to their community.
+            {source === 'local' || source === 'founding' ? 
+              "At Eskeen Clinic, we've streamlined PRP therapy to make it accessible and affordable for our Putney community. No upselling, no hidden fees, just honest treatment that works." :
+              "Eskeen Clinic in Putney decided to break ranks with Big Pharma and offer PRP therapy directly to their community."
+            }
           </p>
 
           <p className="mb-8">
-            "We watched our patients suffer while the solution was staring us in the face," explains Elanda. "Their own blood contained more regenerative potential than any synthetic treatment available."
+            {source === 'local' || source === 'founding' ? 
+              "\"After treating over 1,000 patients, we know what works,\" explains Elanda. \"Your own blood contains more regenerative potential than any synthetic treatment available.\"" :
+              "\"We watched our patients suffer while the solution was staring us in the face,\" explains Elanda. \"Their own blood contained more regenerative potential than any synthetic treatment available.\""
+            }
           </p>
 
           <p className="mb-6">The process is elegantly simple:</p>
@@ -440,14 +456,25 @@ function PRPAdvertorialContent() {
             PRP uses your own blood - zero rejection risk, permanent results, no daily maintenance.
           </p>
 
-          <h2 className="text-3xl font-bold mt-12 mb-6">What Happens Next?</h2>
+          <h2 className="text-3xl font-bold mt-12 mb-6">
+            {source === 'local' || source === 'founding' ? 
+              "Limited Founding Patient Spaces Available" :
+              "What Happens Next?"
+            }
+          </h2>
 
           <p className="mb-6">
-            The pharmaceutical industry's stranglehold on hair loss treatment is finally loosening. More medical professionals are refusing to keep patients trapped in expensive, ineffective treatment cycles.
+            {source === 'local' || source === 'founding' ? 
+              "We're offering special founding patient rates to build our Putney practice. As experienced practitioners with over 1,000 successful treatments, we're committed to bringing proven results to our local community." :
+              "The pharmaceutical industry's stranglehold on hair loss treatment is finally loosening. More medical professionals are refusing to keep patients trapped in expensive, ineffective treatment cycles."
+            }
           </p>
 
           <p className="mb-8">
-            But access remains limited. Eskeen Clinic accepts only a small number of PRP patients monthly to ensure quality care and proper follow-up.
+            {source === 'local' || source === 'founding' ? 
+              "We're limiting our founding patient group to just 50 people to ensure everyone receives the personal attention they deserve. This includes priority booking for life and direct access to your practitioners." :
+              "But access remains limited. Eskeen Clinic accepts only a small number of PRP patients monthly to ensure quality care and proper follow-up."
+            }
           </p>
 
           {/* Final CTA */}
