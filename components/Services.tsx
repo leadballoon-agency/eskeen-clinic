@@ -22,7 +22,7 @@ const services = [
     title: 'Dermal Fillers',
     description: 'Restore volume and enhance facial contours with premium hyaluronic acid fillers',
     features: ['Lip enhancement', 'Cheek augmentation', 'Jawline contouring', 'Nasolabial folds'],
-    price: 'From £250',
+    price: 'From £160',
     duration: '45-60 min',
     icon: '💉',
     gradient: 'from-primary-300 to-primary-500',

@@ -39,7 +39,7 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/5] relative">
                 <img
-                  src="/images/Mavra.jpg"
+                  src="/images/Elanda.jpg"
                   alt="Nurse Elanda - Advanced Aesthetics Practitioner"
                   className="w-full h-full object-cover"
                 />
@@ -147,7 +147,7 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/5] relative">
                 <img
-                  src="/images/Elanda.jpg"
+                  src="/images/Mavra.jpg"
                   alt="Mavra - Advanced Aesthetician & Prescriber"
                   className="w-full h-full object-cover"
                 />
