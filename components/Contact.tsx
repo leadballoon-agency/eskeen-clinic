@@ -166,10 +166,10 @@ export default function Contact() {
             </p>
 
             <div className="flex space-x-4">
-              <a href="#" className="text-xs sm:text-sm text-neutral-600 hover:text-primary-600 transition-colors">
+              <a href="/privacy" className="text-xs sm:text-sm text-neutral-600 hover:text-primary-600 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-xs sm:text-sm text-neutral-600 hover:text-primary-600 transition-colors">
+              <a href="/terms" className="text-xs sm:text-sm text-neutral-600 hover:text-primary-600 transition-colors">
                 Terms of Service
               </a>
             </div>
