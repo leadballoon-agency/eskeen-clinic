@@ -13,6 +13,11 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+  const isPRPPage = pathname === '/prp';
+  const isCO2Page = pathname === '/co2-laser';
+  
+  // Determine the correct assessment link based on current page
+  const assessmentLink = isPRPPage ? '#assessment' : isCO2Page ? '#assessment' : '#consultation';
 
   const navLinks = [
     { href: isHomePage ? '#services' : '/#services', label: 'Treatments' },
@@ -61,7 +66,7 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
           </div>
 
           <a
-            href="#consultation"
+            href={assessmentLink}
             onClick={() => FacebookEvents.ClickBookNow('Assessment', 'Navigation Header')}
             className="hidden md:inline-flex bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
@@ -94,7 +99,7 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
                 </a>
               ))}
               <a
-                href="#consultation"
+                href={assessmentLink}
                 onClick={() => FacebookEvents.ClickBookNow('Assessment', 'Mobile Navigation')}
                 className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium text-center"
               >
