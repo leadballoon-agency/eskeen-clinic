@@ -34,7 +34,7 @@ export default function HairRecoveryPackPage() {
   const handlePurchase = () => {
     FacebookEvents.InitiateCheckout(37, 'GBP', 'Hair Recovery Starter Pack');
     // In production, integrate with Stripe
-    alert('Stripe checkout would open here. For now, WhatsApp us to order: 07849 990667');
+    alert('Stripe checkout would open here. For now, WhatsApp us to order: 07846 888649');
   };
 
   return (

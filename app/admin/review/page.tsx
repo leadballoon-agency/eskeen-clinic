@@ -329,7 +329,7 @@ export default function ReviewPage() {
 
               <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                 <p className="text-center">
-                  <strong>Contact:</strong> 07849 990667 • 
+                  <strong>Contact:</strong> 07846 888649 • 
                   <strong>Clinic:</strong> 115 Lower Richmond Road, Putney SW15 1EX
                 </p>
               </div>

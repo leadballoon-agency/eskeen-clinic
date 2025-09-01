@@ -120,10 +120,10 @@ export default function CO2SimpleAssessment() {
               </a>
               
               <a
-                href="tel:07849990667"
+                href="tel:07846888649"
                 className="block w-full text-primary-600 font-medium"
               >
-                Or call us: 07849 990667
+                Or call us: 07846 888649
               </a>
             </div>
           </div>

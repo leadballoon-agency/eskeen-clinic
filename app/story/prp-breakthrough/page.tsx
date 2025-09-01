@@ -524,7 +524,7 @@ function PRPAdvertorialContent() {
             </button>
 
             <p className="mt-6 text-sm opacity-90">
-              Or call directly: <a href="tel:07849990667" className="underline font-bold">07849 990667</a>
+              Or call directly: <a href="tel:07846888649" className="underline font-bold">07846 888649</a>
             </p>
           </div>
 

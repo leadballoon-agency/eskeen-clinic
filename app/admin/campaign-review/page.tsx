@@ -976,7 +976,7 @@ CONTACT INFORMATION
 
 Clinic: Eskeen Clinic
 Address: 115 Lower Richmond Road, Putney SW15 1EX
-Phone: 07849 990667
+Phone: 07846 888649
 Booking: Via Treatwell
 
 ========================================

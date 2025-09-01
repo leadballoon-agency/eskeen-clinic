@@ -129,7 +129,7 @@ export default function PRPCTA() {
             </div>
             
             <p className="text-sm text-neutral-600">
-              © 2024 Eskeen Clinic | 115 Lower Richmond Road, SW15 1EX | 07849 990667
+              © 2024 Eskeen Clinic | 115 Lower Richmond Road, SW15 1EX | 07846 888649
             </p>
 
             <a

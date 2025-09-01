@@ -122,7 +122,7 @@ export default function TermsPage() {
               <p><strong>Eskeen Clinic</strong></p>
               <p>115 Lower Richmond Road</p>
               <p>Putney, London SW15 1EX</p>
-              <p>Phone: 07849 990667</p>
+              <p>Phone: 07846 888649</p>
               <p>Email: info@eskeenclinic.com</p>
             </div>
           </section>

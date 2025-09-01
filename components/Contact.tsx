@@ -12,7 +12,7 @@ export default function Contact() {
     {
       icon: '📞',
       title: 'Contact',
-      details: ['07849 990667', 'Kerry will qualify & book you'],
+      details: ['07846 888649', 'Kerry will qualify & book you'],
     },
     {
       icon: '🕐',

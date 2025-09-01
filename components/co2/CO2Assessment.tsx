@@ -226,7 +226,7 @@ export default function CO2Assessment() {
                 </a>
                 
                 <p className="text-sm text-neutral-600">
-                  Or call us directly: <a href="tel:07849990667" className="font-semibold text-primary-600 hover:text-primary-700">07849 990667</a>
+                  Or call us directly: <a href="tel:07846888649" className="font-semibold text-primary-600 hover:text-primary-700">07846 888649</a>
                 </p>
               </div>
             </div>

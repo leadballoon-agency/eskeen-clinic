@@ -86,10 +86,10 @@ export default function CO2FAQ() {
               </svg>
             </button>
             <a
-              href="tel:07849990667"
+              href="tel:07846888649"
               className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-primary-50 transition-all duration-300"
             >
-              Call Now: 07849 990667
+              Call Now: 07846 888649
             </a>
           </div>
         </div>
