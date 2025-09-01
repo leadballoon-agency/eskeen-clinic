@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
-import BookingModal from '@/components/BookingModal';
+import GHLBookingModal from '@/components/GHLBookingModal';
 import SLOOffer from '@/components/SLOOffer';
 
 export default function PRPAssessment() {
@@ -250,6 +250,12 @@ export default function PRPAssessment() {
           )}
         </div>
       </div>
+
+      <GHLBookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="PRP Hair Consultation"
+      />
     </div>
   );
 }

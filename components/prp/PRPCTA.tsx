@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
-import BookingModal from '@/components/BookingModal';
+import GHLBookingModal from '@/components/GHLBookingModal';
 
 export default function PRPCTA() {
   const [showBookingModal, setShowBookingModal] = useState(false);
@@ -142,7 +142,7 @@ export default function PRPCTA() {
         </footer>
       </div>
 
-      <BookingModal 
+      <GHLBookingModal 
         isOpen={showBookingModal}
         onClose={() => setShowBookingModal(false)}
         treatment="PRP + FREE Biotin"

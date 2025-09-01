@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
-import BookingModal from '@/components/BookingModal';
+import GHLBookingModal from '@/components/GHLBookingModal';
 
 export default function PRPFAQ() {
   const [showBookingModal, setShowBookingModal] = useState(false);
@@ -87,7 +87,7 @@ export default function PRPFAQ() {
         </div>
       </div>
 
-      <BookingModal 
+      <GHLBookingModal 
         isOpen={showBookingModal}
         onClose={() => setShowBookingModal(false)}
         treatment="PRP Consultation"
