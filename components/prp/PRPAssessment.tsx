@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
 import SLOOffer from '@/components/SLOOffer';
 
 export default function PRPAssessment() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   const questions = [
     {
@@ -153,15 +155,16 @@ export default function PRPAssessment() {
           </div>
 
           <div className="space-y-3">
-            <a
-              href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => FacebookEvents.ClickBookNow(recommendation.treatment, 'PRP Assessment Result')}
+            <button
+              onClick={() => {
+                FacebookEvents.ClickBookNow(recommendation.treatment, 'PRP Assessment Result');
+                FacebookEvents.Lead(30); // Higher value for completed assessment
+                setShowBookingModal(true);
+              }}
               className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-100 text-center"
             >
-              Book Your Consultation
-            </a>
+              Request Consultation Call
+            </button>
             <button
               onClick={reset}
               className="block w-full text-primary-600 text-sm py-2 hover:text-primary-700 transition-all"
@@ -171,7 +174,7 @@ export default function PRPAssessment() {
           </div>
 
           <p className="text-xs text-neutral-500 text-center px-4">
-            * This is an initial assessment. Nurse Elanda will provide a detailed treatment plan during your consultation.
+            * This is an initial assessment. Our practitioners will provide a detailed treatment plan during your consultation.
           </p>
         </div>
 

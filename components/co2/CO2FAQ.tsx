@@ -1,10 +1,15 @@
 'use client';
 
+import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
+
 export default function CO2FAQ() {
+  const [showBookingModal, setShowBookingModal] = useState(false);
   const faqs = [
     {
       question: 'Is CO2 laser treatment painful?',
-      answer: 'We apply numbing cream 30-45 minutes before treatment to ensure your comfort. Most clients describe the sensation as a warm tingling feeling. Nurse Elanda\'s gentle technique minimizes any discomfort.',
+      answer: 'We apply numbing cream 30-45 minutes before treatment to ensure your comfort. Most clients describe the sensation as a warm tingling feeling. Our practitioners use gentle techniques to minimize any discomfort.',
     },
     {
       question: 'How much downtime should I expect?',
@@ -20,7 +25,7 @@ export default function CO2FAQ() {
     },
     {
       question: 'Is CO2 laser safe for all skin types?',
-      answer: 'CO2 laser is most suitable for lighter skin tones. During your consultation, Nurse Elanda will assess your skin type and recommend the best treatment approach for you.',
+      answer: 'CO2 laser is most suitable for lighter skin tones. During your consultation, we\'ll assess your skin type and recommend the best treatment approach for you.',
     },
     {
       question: 'What\'s the difference between CO2 and other lasers?',
@@ -68,17 +73,18 @@ export default function CO2FAQ() {
             Book a free consultation to discuss your specific needs and concerns
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                FacebookEvents.ClickBookNow('CO2 Consultation', 'CO2 FAQ');
+                setShowBookingModal(true);
+              }}
               className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               Book Free Consultation
               <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </a>
+            </button>
             <a
               href="tel:07849990667"
               className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-primary-50 transition-all duration-300"
@@ -106,6 +112,12 @@ export default function CO2FAQ() {
           </div>
         </div>
       </div>
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="CO2 Laser Consultation"
+      />
     </section>
   );
 }

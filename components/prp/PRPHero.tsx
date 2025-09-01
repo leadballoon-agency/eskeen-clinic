@@ -34,8 +34,8 @@ export default function PRPHero() {
               href="#assessment"
               className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base md:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <span className="hidden sm:inline">Start Your Assessment - From £175</span>
-              <span className="sm:hidden">Start Assessment - £175</span>
+              <span className="hidden sm:inline">Free Assessment • Treatments from £175</span>
+              <span className="sm:hidden">Free Assessment</span>
               <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

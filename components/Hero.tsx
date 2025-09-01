@@ -80,7 +80,7 @@ export default function Hero() {
                   <div className="flex text-yellow-400">
                     {'★★★★★'}
                   </div>
-                  <p className="text-sm text-neutral-600">5.0 Treatwell</p>
+                  <p className="text-sm text-neutral-600">5.0 Rating</p>
                 </div>
                 <div className="text-neutral-300">|</div>
                 <div className="text-center">

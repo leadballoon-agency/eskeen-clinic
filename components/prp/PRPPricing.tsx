@@ -1,9 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
 
 export default function PRPPricing() {
+  const [showBookingModal, setShowBookingModal] = useState(false);
+  const [selectedTreatment, setSelectedTreatment] = useState('');
+
   useEffect(() => {
     // Track when users view PRP pricing
     FacebookEvents.ViewPricing('PRP Therapy', 175);
@@ -96,14 +100,16 @@ export default function PRPPricing() {
                       Priority booking
                     </li>
                   </ul>
-                  <a
-                    href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  <button
+                    onClick={() => {
+                      FacebookEvents.ClickBookNow('3 Hair Sessions Package', 'PRP Pricing');
+                      setSelectedTreatment('3 Hair Sessions Package - £450');
+                      setShowBookingModal(true);
+                    }}
+                    className="block w-full text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
                   >
                     Book Package
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -177,14 +183,16 @@ export default function PRPPricing() {
                     Aftercare support
                   </li>
                 </ul>
-                <a
-                  href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center bg-neutral-100 text-neutral-700 px-6 py-3 rounded-full font-medium hover:bg-neutral-200 transition-all duration-300"
+                <button
+                  onClick={() => {
+                    FacebookEvents.ClickBookNow('Single Facial Session', 'PRP Pricing');
+                    setSelectedTreatment('Full Face + Eyes - £175');
+                    setShowBookingModal(true);
+                  }}
+                  className="block w-full text-center bg-neutral-100 text-neutral-700 px-6 py-3 rounded-full font-medium hover:bg-neutral-200 transition-all duration-300"
                 >
                   Book Now
-                </a>
+                </button>
               </div>
             </div>
 
@@ -222,14 +230,16 @@ export default function PRPPricing() {
                       Save £75
                     </li>
                   </ul>
-                  <a
-                    href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  <button
+                    onClick={() => {
+                      FacebookEvents.ClickBookNow('3 Face Sessions Package', 'PRP Pricing');
+                      setSelectedTreatment('3 Face Sessions Package - £450');
+                      setShowBookingModal(true);
+                    }}
+                    className="block w-full text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
                   >
                     Book Package
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -303,14 +313,16 @@ export default function PRPPricing() {
                     Neck rejuvenation
                   </li>
                 </ul>
-                <a
-                  href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                <button
+                  onClick={() => {
+                    FacebookEvents.ClickBookNow('Face, Eyes & Neck', 'PRP Pricing');
+                    setSelectedTreatment('Face, Eyes & Neck - £250');
+                    setShowBookingModal(true);
+                  }}
+                  className="block w-full text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
                 >
                   Book Now
-                </a>
+                </button>
               </div>
             </div>
 
@@ -341,14 +353,16 @@ export default function PRPPricing() {
                     Complete treatment
                   </li>
                 </ul>
-                <a
-                  href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                <button
+                  onClick={() => {
+                    FacebookEvents.ClickBookNow('Face & Hair Combo', 'PRP Pricing');
+                    setSelectedTreatment('Face & Hair Combo - £350');
+                    setShowBookingModal(true);
+                  }}
+                  className="block w-full text-center bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
                 >
                   Book Combo
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -380,6 +394,12 @@ export default function PRPPricing() {
           </div>
         </div>
       </div>
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment={selectedTreatment}
+      />
     </section>
   );
 }

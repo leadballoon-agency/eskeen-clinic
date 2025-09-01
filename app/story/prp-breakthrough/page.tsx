@@ -119,8 +119,8 @@ function PRPAdvertorialContent() {
         return {
           headline: "Why Big Pharma Doesn't Want You Knowing About This £350 Treatment That Ends Hair Loss Forever",
           subheadline: "A Putney Medical Practice Is Breaking The Pharmaceutical Industry's 80-Year Cover-Up",
-          opening: "PUTNEY, LONDON - Licensed practitioner Elanda never expected to stumble upon one of the pharmaceutical industry's best-kept secrets while treating hair loss at her Putney clinic. But what she discovered shocked her to the core.",
-          hook: "\"I had patients spending £160 per year on Regaine, taking finasteride with sexual dysfunction fears, even flying to Turkey for £12,000 hair transplants,\" Elanda recalls. \"Meanwhile, the solution was literally flowing through their veins.\""
+          opening: "PUTNEY, LONDON - Licensed practitioners Elanda and Mavra never expected to stumble upon one of the pharmaceutical industry's best-kept secrets while treating hair loss at their Putney clinic. But what they discovered shocked them to the core.",
+          hook: "\"We had patients spending £160 per year on Regaine, taking finasteride with sexual dysfunction fears, even flying to Turkey for £12,000 hair transplants,\" Mavra recalls. \"Meanwhile, the solution was literally flowing through their veins.\""
         };
     }
   };
@@ -230,7 +230,7 @@ function PRPAdvertorialContent() {
               
               <blockquote className="border-l-4 border-primary-500 pl-6 py-4 my-8 italic text-xl text-neutral-700">
                 "We opened our own practice because we believe everyone deserves access to treatments that actually work."
-                <footer className="text-base mt-2 not-italic">- Elanda & Mavra, Eskeen Clinic Founders</footer>
+                <footer className="text-base mt-2 not-italic">- Nurse Elanda & Mavra, Eskeen Clinic Co-Founders</footer>
               </blockquote>
             </>
           ) : (
@@ -295,7 +295,7 @@ function PRPAdvertorialContent() {
           <p className="mb-8">
             {source === 'local' || source === 'founding' ? 
               "\"We've treated over 1,000 patients with PRP because it works,\" we explain to every consultation. \"While others push expensive daily treatments, we offer a permanent solution using your own body's healing power.\"" :
-              "\"You can't patent what nature already created,\" explains Elanda. \"So while they spent billions developing synthetic drugs with potential side effects, the solution existed within patients' own bodies.\""
+              "\"You can't patent what nature already created,\" explains Mavra, our Pharmacist Practitioner. \"So while they spent billions developing synthetic drugs with potential side effects, the solution existed within patients' own bodies.\""
             }
           </p>
 
@@ -377,8 +377,8 @@ function PRPAdvertorialContent() {
 
           <p className="mb-8">
             {source === 'local' || source === 'founding' ? 
-              "\"After treating over 1,000 patients, we know what works,\" explains Elanda. \"Your own blood contains more regenerative potential than any synthetic treatment available.\"" :
-              "\"We watched our patients suffer while the solution was staring us in the face,\" explains Elanda. \"Their own blood contained more regenerative potential than any synthetic treatment available.\""
+              "\"After treating over 1,000 patients, we know what works,\" explains Elanda, our lead nurse practitioner. \"Your own blood contains more regenerative potential than any synthetic treatment available.\"" :
+              "\"We watched our patients suffer while the solution was staring us in the face,\" explains Elanda, our lead nurse practitioner. \"Their own blood contained more regenerative potential than any synthetic treatment available.\""
             }
           </p>
 

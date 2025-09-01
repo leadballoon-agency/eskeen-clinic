@@ -1,16 +1,20 @@
 'use client';
 
 import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
 
 export default function ClinicGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   const images = [
-    { src: '/images/clinic/clinic-outside1.webp', alt: 'Eskeen Clinic Exterior', caption: 'Our welcoming clinic entrance' },
-    { src: '/images/clinic/outside2.webp', alt: 'Eskeen Clinic Building', caption: 'Conveniently located in Putney' },
+    { src: '/images/clinic/IMG_3499.JPG', alt: 'Eskeen Clinic Exterior', caption: 'Our welcoming clinic entrance' },
+    { src: '/images/clinic/clinic-outside1.webp', alt: 'Eskeen Clinic Building', caption: 'Conveniently located in Putney' },
     { src: '/images/clinic/inside1.webp', alt: 'Reception Area', caption: 'Modern, comfortable reception' },
     { src: '/images/clinic/inside2.webp', alt: 'Treatment Room', caption: 'State-of-the-art treatment facilities' },
     { src: '/images/clinic/inside3.webp', alt: 'Consultation Room', caption: 'Private consultation spaces' },
+    { src: '/images/clinic/outside2.webp', alt: 'Clinic Location', caption: 'Easy to find on Lower Richmond Road' },
   ];
 
   return (
@@ -106,14 +110,15 @@ export default function ClinicGallery() {
             </div>
             <div className="text-center">
               <p className="text-lg mb-4">Ready to visit us?</p>
-              <a
-                href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  FacebookEvents.ClickBookNow('Clinic Visit', 'Clinic Gallery');
+                  setShowBookingModal(true);
+                }}
                 className="inline-block bg-white text-primary-600 px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
                 Book Your Visit
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -141,6 +146,12 @@ export default function ClinicGallery() {
           </div>
         </div>
       )}
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="Clinic Visit"
+      />
     </section>
   );
 }

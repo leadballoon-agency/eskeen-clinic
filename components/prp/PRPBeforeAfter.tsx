@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
 
 const beforeAfterData = {
   hair: [
@@ -68,6 +70,7 @@ const beforeAfterData = {
 export default function PRPBeforeAfter() {
   const [activeTab, setActiveTab] = useState<'hair' | 'face'>('hair');
   const [selectedResult, setSelectedResult] = useState(0);
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   const currentData = beforeAfterData[activeTab];
 
@@ -222,14 +225,15 @@ export default function PRPBeforeAfter() {
                     >
                       Take Assessment
                     </a>
-                    <a
-                      href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => {
+                        FacebookEvents.ClickBookNow('PRP Consultation', 'Before After Gallery');
+                        setShowBookingModal(true);
+                      }}
                       className="flex-1 text-center border-2 border-primary-500 text-primary-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base hover:bg-primary-50 transition-all duration-300"
                     >
                       Book Consultation
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -237,6 +241,12 @@ export default function PRPBeforeAfter() {
           </div>
         </div>
       </div>
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="PRP Consultation"
+      />
     </section>
   );
 }

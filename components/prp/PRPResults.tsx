@@ -1,9 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
 
 export default function PRPResults() {
   const [activeTab, setActiveTab] = useState('hair');
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   const results = {
     hair: {
@@ -184,14 +187,15 @@ export default function PRPResults() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
-              <a
-                href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  FacebookEvents.ClickBookNow('PRP Consultation', 'PRP Results');
+                  setShowBookingModal(true);
+                }}
                 className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-primary-50 transition-all duration-300"
               >
                 Book Consultation
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -247,12 +251,18 @@ export default function PRPResults() {
               </div>
               <div>
                 <p className="text-3xl font-bold gradient-text">5.0</p>
-                <p className="text-sm text-neutral-600">Treatwell Rating</p>
+                <p className="text-sm text-neutral-600">Client Rating</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="PRP Consultation"
+      />
     </section>
   );
 }

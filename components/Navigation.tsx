@@ -61,13 +61,11 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
           </div>
 
           <a
-            href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => FacebookEvents.ClickBookNow('Treatwell', 'Navigation Header')}
+            href="#consultation"
+            onClick={() => FacebookEvents.ClickBookNow('Assessment', 'Navigation Header')}
             className="hidden md:inline-flex bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
-            Book Now
+            Start Assessment
           </a>
 
           <button
@@ -96,13 +94,11 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
                 </a>
               ))}
               <a
-                href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => FacebookEvents.ClickBookNow('Treatwell', 'Mobile Navigation')}
+                href="#consultation"
+                onClick={() => FacebookEvents.ClickBookNow('Assessment', 'Mobile Navigation')}
                 className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium text-center"
               >
-                Book Now
+                Start Assessment
               </a>
             </div>
           </div>

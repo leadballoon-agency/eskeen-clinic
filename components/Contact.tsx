@@ -12,7 +12,7 @@ export default function Contact() {
     {
       icon: '📞',
       title: 'Contact',
-      details: ['07849 990667', 'Book via Treatwell'],
+      details: ['07849 990667', 'Kerry will qualify & book you'],
     },
     {
       icon: '🕐',
@@ -24,7 +24,7 @@ export default function Contact() {
   const faqs = [
     {
       question: 'How do I book an appointment?',
-      answer: 'Start with our quick skin assessment to receive personalised recommendations. After your assessment, you\'ll be directed to book your appointment through Treatwell.',
+      answer: 'Start with our quick skin assessment to receive personalised recommendations. After your assessment, Kerry, our booking manager, will call you to qualify your needs and schedule your appointment.',
     },
     {
       question: 'Do you offer consultations?',

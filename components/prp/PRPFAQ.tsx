@@ -1,6 +1,11 @@
 'use client';
 
+import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
+
 export default function PRPFAQ() {
+  const [showBookingModal, setShowBookingModal] = useState(false);
   const faqs = [
     {
       question: 'How does PRP therapy work?',
@@ -67,19 +72,26 @@ export default function PRPFAQ() {
 
         <div className="mt-10 sm:mt-12 text-center">
           <p className="text-sm sm:text-base text-neutral-600 mb-4 sm:mb-6">Still have questions about PRP therapy?</p>
-          <a
-            href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              FacebookEvents.ClickBookNow('PRP Consultation', 'PRP FAQ');
+              setShowBookingModal(true);
+            }}
             className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base md:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             Book Free Consultation
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </a>
+          </button>
         </div>
       </div>
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="PRP Consultation"
+      />
     </section>
   );
 }

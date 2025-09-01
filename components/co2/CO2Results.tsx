@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
+
+import { useState } from 'react';
 
 export default function CO2Results() {
+  const [showBookingModal, setShowBookingModal] = useState(false);
   const [activeTab, setActiveTab] = useState('scars');
 
   const results = {
@@ -95,21 +100,22 @@ export default function CO2Results() {
 
               <div className="pt-4">
                 <p className="text-sm text-neutral-600 mb-4">
-                  <strong>Note from Nurse Elanda:</strong> "Every client's skin is unique. During your 
-                  consultation, I'll assess your specific needs and create a personalised treatment plan 
-                  to achieve your best possible results."
+                  <strong>Important Note:</strong> Every client's skin is unique. During your 
+                  consultation, we'll assess your specific needs and create a personalised treatment plan 
+                  to achieve your best possible results.
                 </p>
-                <a
-                  href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => {
+                    FacebookEvents.ClickBookNow('CO2 Consultation', 'CO2 Results');
+                    setShowBookingModal(true);
+                  }}
                   className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
                 >
                   Book Your Consultation
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -199,6 +205,12 @@ export default function CO2Results() {
           </div>
         </div>
       </div>
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="CO2 Laser Consultation"
+      />
     </section>
   );
 }

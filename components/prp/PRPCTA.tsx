@@ -1,7 +1,11 @@
 'use client';
 
+import { useState } from 'react';
+import { FacebookEvents } from '@/lib/facebook-events';
+import BookingModal from '@/components/BookingModal';
 
 export default function PRPCTA() {
+  const [showBookingModal, setShowBookingModal] = useState(false);
   return (
     <section className="py-24 bg-gradient-to-br from-primary-50 to-white">
       <div className="max-w-7xl mx-auto section-padding">
@@ -36,14 +40,15 @@ export default function PRPCTA() {
                 <p className="text-primary-200">With Every Session</p>
               </div>
             </div>
-            <a
-              href="https://www.treatwell.co.uk/place/eskeen-clinic/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                FacebookEvents.ClickBookNow('PRP + Biotin', 'PRP CTA Section');
+                setShowBookingModal(true);
+              }}
               className="inline-block mt-6 bg-white text-primary-600 px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Book PRP + FREE Biotin Now
-            </a>
+            </button>
           </div>
         </div>
 
@@ -136,6 +141,12 @@ export default function PRPCTA() {
           </div>
         </footer>
       </div>
+
+      <BookingModal 
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        treatment="PRP + FREE Biotin"
+      />
     </section>
   );
 }
