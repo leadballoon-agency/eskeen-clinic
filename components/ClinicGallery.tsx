@@ -10,11 +10,11 @@ export default function ClinicGallery() {
 
   const images = [
     { src: '/images/clinic/IMG_3499.JPG', alt: 'Eskeen Clinic Exterior', caption: 'Our welcoming clinic entrance' },
-    { src: '/images/clinic/clinic-outside1.webp', alt: 'Eskeen Clinic Building', caption: 'Conveniently located in Putney' },
-    { src: '/images/clinic/inside1.webp', alt: 'Reception Area', caption: 'Modern, comfortable reception' },
-    { src: '/images/clinic/inside2.webp', alt: 'Treatment Room', caption: 'State-of-the-art treatment facilities' },
-    { src: '/images/clinic/inside3.webp', alt: 'Consultation Room', caption: 'Private consultation spaces' },
-    { src: '/images/clinic/outside2.webp', alt: 'Clinic Location', caption: 'Easy to find on Lower Richmond Road' },
+    { src: '/images/clinic/IMG_3182.jpg', alt: 'Modern Treatment Room', caption: 'State-of-the-art treatment facilities' },
+    { src: '/images/clinic/IMG_3694.jpg', alt: 'Clinic Interior', caption: 'Comfortable and modern environment' },
+    { src: '/images/clinic/IMG_3722.jpg', alt: 'Reception Area', caption: 'Welcoming reception space' },
+    { src: '/images/clinic/inside1.webp', alt: 'Treatment Room', caption: 'Private treatment rooms' },
+    { src: '/images/clinic/inside2.webp', alt: 'Consultation Room', caption: 'Professional consultation spaces' },
   ];
 
   return (
