@@ -110,15 +110,30 @@ export default function ClinicGallery() {
             </div>
             <div className="text-center">
               <p className="text-lg mb-4">Ready to visit us?</p>
-              <button
-                onClick={() => {
-                  FacebookEvents.ClickBookNow('Clinic Visit', 'Clinic Gallery');
-                  setShowBookingModal(true);
-                }}
-                className="inline-block bg-white text-primary-600 px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
-              >
-                Book Your Visit
-              </button>
+              <div className="space-y-3">
+                <button
+                  onClick={() => {
+                    // Scroll to assessment section on homepage
+                    const assessmentSection = document.getElementById('consultation');
+                    if (assessmentSection) {
+                      assessmentSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      // If not on homepage, open booking modal
+                      FacebookEvents.ClickBookNow('Free Assessment', 'Clinic Gallery');
+                      setShowBookingModal(true);
+                    }
+                  }}
+                  className="block w-full bg-white text-primary-600 px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                >
+                  Start Free Assessment
+                </button>
+                <a
+                  href="tel:07846888649"
+                  className="block text-primary-200 hover:text-white transition-colors text-sm"
+                >
+                  Or call Kerry directly: 07846 888649
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -150,7 +165,7 @@ export default function ClinicGallery() {
       <BookingModal 
         isOpen={showBookingModal}
         onClose={() => setShowBookingModal(false)}
-        treatment="Clinic Visit"
+        treatment="Free Assessment"
       />
     </section>
   );
