@@ -10,6 +10,7 @@ export default function PRPAssessment() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
   const [showBookingModal, setShowBookingModal] = useState(false);
+  const [showAllPricing, setShowAllPricing] = useState(false);
 
   const questions = [
     {
@@ -139,7 +140,10 @@ export default function PRPAssessment() {
           <div className="text-center">
             <p className="text-primary-600 font-bold text-xl sm:text-2xl mb-2">{recommendation.treatment}</p>
             <p className="text-neutral-600 mb-2">{recommendation.sessions}</p>
-            <p className="text-3xl sm:text-4xl font-bold gradient-text mb-4">{recommendation.price}</p>
+            <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-2xl p-4 mb-4">
+              <p className="text-3xl sm:text-4xl font-bold mb-2">{recommendation.price}</p>
+              <p className="text-sm opacity-90">Best value for your needs</p>
+            </div>
             <p className="text-neutral-600 text-sm sm:text-base italic px-4">{recommendation.message}</p>
           </div>
           
@@ -173,6 +177,42 @@ export default function PRPAssessment() {
             </button>
           </div>
 
+          <button
+            onClick={() => setShowAllPricing(!showAllPricing)}
+            className="text-sm text-primary-600 hover:text-primary-700 transition-colors mb-4"
+          >
+            {showAllPricing ? 'Hide' : 'View'} all package options →
+          </button>
+          
+          {showAllPricing && (
+            <div className="bg-neutral-50 rounded-xl p-4 mb-4 text-left">
+              <h4 className="font-semibold mb-3">All Package Options:</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span>Single Session</span>
+                  <span className="font-semibold">£175</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>3 Sessions Package</span>
+                  <span className="font-semibold">£450 (Save £75)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>6 Sessions Package</span>
+                  <span className="font-semibold">£699 (Save £351)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Face & Hair Combo</span>
+                  <span className="font-semibold">£350</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Face, Eyes & Neck</span>
+                  <span className="font-semibold">£250</span>
+                </div>
+              </div>
+              <p className="text-xs text-neutral-500 mt-3">* All hair packages include free biotin injections</p>
+            </div>
+          )}
+          
           <p className="text-xs text-neutral-500 text-center px-4">
             * This is an initial assessment. Our practitioners will provide a detailed treatment plan during your consultation.
           </p>

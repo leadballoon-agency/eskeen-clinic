@@ -41,7 +41,7 @@ export default function PRPPage() {
         <PRPResults />
         <PRPBeforeAfter />
         <PRPProcess />
-        <PRPPricing />
+        {/* Pricing now integrated into assessment results for better UX */}
         <PRPFAQ />
         <PRPCTA />
       </main>
