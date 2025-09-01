@@ -105,7 +105,7 @@ export default function About() {
               <h3 className="font-display text-3xl font-bold">
                 Mavra
                 <span className="block text-xl text-primary-600 font-normal mt-2">
-                  Advanced Aesthetician & Prescriber
+                  Advanced Aesthetician and Pharmacist Practitioner
                 </span>
               </h3>
             </div>
@@ -139,7 +139,7 @@ export default function About() {
               <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-primary-700 font-medium">Licensed Prescriber</span>
+              <span className="text-primary-700 font-medium">Pharmacist Practitioner</span>
             </div>
           </div>
 
@@ -148,7 +148,7 @@ export default function About() {
               <div className="aspect-[4/5] relative">
                 <img
                   src="/images/Mavra.jpg"
-                  alt="Mavra - Advanced Aesthetician & Prescriber"
+                  alt="Mavra - Advanced Aesthetician and Pharmacist Practitioner"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-100/10 to-primary-300/10"></div>

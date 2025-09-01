@@ -129,7 +129,7 @@ export default function Hero() {
                     </div>
                     <div className="pt-3 pb-2 text-center">
                       <p className="font-serif text-2xl text-neutral-700 italic">𝓜𝓪𝓿𝓻𝓪</p>
-                      <p className="text-xs text-neutral-500">Licensed Prescriber</p>
+                      <p className="text-xs text-neutral-500">Pharmacist Practitioner</p>
                     </div>
                   </div>
                 </div>

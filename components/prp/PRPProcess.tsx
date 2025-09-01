@@ -172,7 +172,7 @@ export default function PRPProcess() {
                     Vampire Facial Expert
                   </span>
                   <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
-                    Licensed Prescriber
+                    Pharmacist Practitioner
                   </span>
                 </div>
               </div>

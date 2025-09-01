@@ -227,7 +227,7 @@ export default function PRPResults() {
               />
               <div>
                 <h4 className="font-bold">Mavra</h4>
-                <p className="text-sm text-neutral-600">Licensed Prescriber</p>
+                <p className="text-sm text-neutral-600">Pharmacist Practitioner</p>
                 <div className="flex text-yellow-400 text-sm mt-1">
                   {'★★★★★'}
                 </div>
