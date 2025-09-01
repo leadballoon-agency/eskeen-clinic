@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
 import BookingModal from '@/components/BookingModal';
 
-import { useState } from 'react';
-
 export default function CO2Results() {
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [activeTab, setActiveTab] = useState('scars');
