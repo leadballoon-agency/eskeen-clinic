@@ -12,6 +12,32 @@ export default function PRPAssessment() {
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [showAllPricing, setShowAllPricing] = useState(false);
 
+  // Helper function to get recommendation data
+  const getRecommendationData = (assessmentAnswers: Record<string, string>) => {
+    const concern = assessmentAnswers.concern;
+    const commitment = assessmentAnswers.commitment;
+    
+    if (concern === 'hair-loss' || concern === 'hair-thinning') {
+      return {
+        treatment: 'Hair Restoration PRP',
+        sessions: commitment === 'package6' ? '6 sessions optimal' : '3-6 sessions recommended',
+        price: commitment === 'package6' ? '£699 (6 sessions + 6 biotin)' : commitment === 'package3' ? '£450 (3 sessions + 3 biotin)' : '£175 per session + free biotin',
+      };
+    } else if (concern === 'facial-ageing') {
+      return {
+        treatment: 'Vampire Facial PRP',
+        sessions: '3 sessions for best results',
+        price: commitment === 'package6' ? '£699 (6 sessions)' : commitment === 'package3' ? '£450 (3 sessions)' : '£175 per session (including eyes)',
+      };
+    } else {
+      return {
+        treatment: 'Combination PRP Therapy',
+        sessions: commitment === 'single' ? 'Single session' : '3-6 sessions recommended',
+        price: commitment === 'single' ? '£350 (face & hair combo)' : '£250 (face, eyes & neck)',
+      };
+    }
+  };
+
   const questions = [
     {
       id: 'concern',
@@ -55,7 +81,7 @@ export default function PRPAssessment() {
     },
   ];
 
-  const handleAnswer = (value: string) => {
+  const handleAnswer = async (value: string) => {
     const newAnswers = { ...answers, [questions[step].id]: value };
     setAnswers(newAnswers);
     
@@ -85,6 +111,25 @@ export default function PRPAssessment() {
       
       // Always track as lead for volume
       FacebookEvents.Lead(leadValue);
+      
+      // Send assessment data to GHL via webhook
+      const recommendation = getRecommendationData(newAnswers);
+      try {
+        await fetch('/api/ghl-webhook', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            treatment: recommendation.treatment,
+            assessmentData: newAnswers,
+            recommendedPackage: recommendation.sessions,
+            recommendedPrice: recommendation.price
+          })
+        });
+      } catch (error) {
+        console.error('Failed to send assessment to GHL:', error);
+      }
     }
   };
 
@@ -160,10 +205,29 @@ export default function PRPAssessment() {
 
           <div className="space-y-3">
             <button
-              onClick={() => {
+              onClick={async () => {
                 FacebookEvents.ClickBookNow(recommendation.treatment, 'PRP Assessment Result');
                 FacebookEvents.Lead(30); // Higher value for completed assessment
                 setShowBookingModal(true);
+                
+                // Also send to GHL when they click book (in case first webhook failed)
+                try {
+                  await fetch('/api/ghl-webhook', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      treatment: recommendation.treatment,
+                      assessmentData: answers,
+                      recommendedPackage: recommendation.sessions,
+                      recommendedPrice: recommendation.price,
+                      // Note: email/phone will be captured in the GHL calendar widget
+                    })
+                  });
+                } catch (error) {
+                  console.error('Failed to update GHL:', error);
+                }
               }}
               className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-100 text-center"
             >

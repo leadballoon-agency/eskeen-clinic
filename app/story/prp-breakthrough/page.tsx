@@ -28,12 +28,12 @@ function PRPAdvertorialContent() {
       if (scrollPercent > 75 && readingProgress <= 75) {
         // 75% scroll shows real engagement
         FacebookEvents.Lead(5); // Small value for volume
-        FacebookEvents.ViewContent('Advertorial 75% Read', 'High Intent');
+        FacebookEvents.ScrollDepth(75); // Use custom event instead
       }
       if (scrollPercent > 90 && readingProgress <= 90) {
         // 90% scroll is highly engaged user
         FacebookEvents.Lead(10); // Higher value but still small
-        FacebookEvents.ViewContent('Advertorial 90% Read', 'Very High Intent');
+        FacebookEvents.ScrollDepth(90); // Use custom event instead
       }
     };
     
@@ -41,10 +41,11 @@ function PRPAdvertorialContent() {
     const timer = setInterval(() => {
       setTimeOnPage(prev => prev + 1);
       if (timeOnPage === 30) {
-        FacebookEvents.ViewContent('Advertorial 30s Engaged', 'Engagement');
+        FacebookEvents.EngageWithContent('Advertorial', 30); // Use custom event
       }
       if (timeOnPage === 60) {
-        FacebookEvents.ViewContent('Advertorial 60s Engaged', 'High Intent');
+        FacebookEvents.EngageWithContent('Advertorial', 60); // Use custom event
+        FacebookEvents.HighEngagement(); // Mark as highly engaged
       }
     }, 1000);
     
