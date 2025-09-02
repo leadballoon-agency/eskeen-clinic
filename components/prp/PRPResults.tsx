@@ -127,27 +127,40 @@ export default function PRPResults() {
 
             <div className="relative order-first lg:order-last">
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                <div className="aspect-[4/3] sm:aspect-[3/2] bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-6xl sm:text-7xl mb-4">
-                      {activeTab === 'hair' ? '💇‍♂️' : '✨'}
+                {activeTab === 'hair' ? (
+                  // Show actual before/after for hair
+                  <div className="aspect-[4/3] sm:aspect-[3/2] relative">
+                    <img
+                      src="/images/before-after/before after male hair restoration.JPG"
+                      alt="Male Hair Restoration Before and After"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+                      <span className="text-xs font-bold text-primary-600">REAL RESULTS</span>
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-primary-800 mb-2">
-                      {activeTab === 'hair' ? 'Hair Restoration Results' : 'Facial Rejuvenation Results'}
-                    </h4>
-                    <p className="text-sm text-primary-600">
-                      Before & After Photos Available
-                    </p>
-                    <p className="text-xs text-primary-500 mt-2">
-                      During Your Consultation
-                    </p>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <p className="text-sm font-bold mb-1">6 PRP Sessions • 6 Months</p>
+                      <p className="text-xs opacity-90">Individual results may vary</p>
+                    </div>
                   </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-sm font-medium mb-1">Individual Results May Vary</p>
-                  <p className="text-xs opacity-90">Results shown after complete treatment series</p>
-                </div>
+                ) : (
+                  // Keep placeholder for facial
+                  <div className="aspect-[4/3] sm:aspect-[3/2] bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <div className="text-6xl sm:text-7xl mb-4">✨</div>
+                      <h4 className="text-lg sm:text-xl font-bold text-primary-800 mb-2">
+                        Facial Rejuvenation Results
+                      </h4>
+                      <p className="text-sm text-primary-600">
+                        Before & After Photos Available
+                      </p>
+                      <p className="text-xs text-primary-500 mt-2">
+                        During Your Consultation
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
               
               {/* Quick Switch Hint */}

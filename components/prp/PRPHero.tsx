@@ -48,39 +48,27 @@ export default function PRPHero() {
             </a>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-16">
-            <div className="relative group">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="aspect-[4/3] relative">
-                  <img
-                    src="/images/clinic/prp-man.png"
-                    alt="Male Hair Restoration PRP"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 text-white">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Male Hair Restoration</h3>
-                    <p className="text-sm sm:text-base text-white/90">Stop hair loss • Stimulate growth</p>
-                  </div>
-                </div>
+          {/* Video Section - Replacing stock photos */}
+          <div className="mt-8 sm:mt-12 md:mt-16">
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative" style={{ paddingBottom: '56.25%' }}>
+                <iframe 
+                  src="https://player.vimeo.com/video/1115215391?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  title="Elanda and Mavra - PRP Hair & Skin Specialists"
+                  className="w-full h-full"
+                />
               </div>
             </div>
-
-            <div className="relative group">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="aspect-[4/3] relative">
-                  <img
-                    src="/images/clinic/woman-thinning-hair.png"
-                    alt="Female Hair Restoration PRP"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 text-white">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Female Hair Restoration</h3>
-                    <p className="text-sm sm:text-base text-white/90">Restore thickness • Natural results</p>
-                  </div>
-                </div>
-              </div>
+            
+            {/* Video Caption */}
+            <div className="mt-4 text-center">
+              <p className="text-sm sm:text-base text-neutral-600">
+                <span className="font-semibold">Watch:</span> Elanda & Mavra explain how PRP transforms hair & skin naturally
+              </p>
             </div>
           </div>
 
