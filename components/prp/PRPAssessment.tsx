@@ -11,6 +11,8 @@ export default function PRPAssessment() {
   const [showResult, setShowResult] = useState(false);
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [showAllPricing, setShowAllPricing] = useState(false);
+  const [contactInfo, setContactInfo] = useState({ name: '', email: '', phone: '' });
+  const [showContactForm, setShowContactForm] = useState(false);
 
   // Helper function to get recommendation data
   const getRecommendationData = (assessmentAnswers: Record<string, string>) => {
@@ -95,7 +97,8 @@ export default function PRPAssessment() {
     if (step < questions.length - 1) {
       setStep(step + 1);
     } else {
-      setShowResult(true);
+      // After last question, show contact form instead of results
+      setShowContactForm(true);
       
       // Track assessment completion
       const concern = newAnswers.concern;
@@ -112,24 +115,7 @@ export default function PRPAssessment() {
       // Always track as lead for volume
       FacebookEvents.Lead(leadValue);
       
-      // Send assessment data to GHL via webhook
-      const recommendation = getRecommendationData(newAnswers);
-      try {
-        await fetch('/api/ghl-webhook', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            treatment: recommendation.treatment,
-            assessmentData: newAnswers,
-            recommendedPackage: recommendation.sessions,
-            recommendedPrice: recommendation.price
-          })
-        });
-      } catch (error) {
-        console.error('Failed to send assessment to GHL:', error);
-      }
+      // Don't send to GHL yet - wait for contact info
     }
   };
 
@@ -168,7 +154,112 @@ export default function PRPAssessment() {
     setStep(0);
     setAnswers({});
     setShowResult(false);
+    setShowContactForm(false);
+    setContactInfo({ name: '', email: '', phone: '' });
   };
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Send to GHL with contact info
+    const recommendation = getRecommendationData(answers);
+    try {
+      await fetch('/api/ghl-webhook', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: contactInfo.name,
+          email: contactInfo.email,
+          phone: contactInfo.phone,
+          treatment: recommendation.treatment,
+          assessmentData: answers,
+          recommendedPackage: recommendation.sessions,
+          recommendedPrice: recommendation.price
+        })
+      });
+    } catch (error) {
+      console.error('Failed to send assessment to GHL:', error);
+    }
+    
+    // Show results
+    setShowContactForm(false);
+    setShowResult(true);
+  };
+
+  if (showContactForm) {
+    return (
+      <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-3xl mx-auto overflow-hidden">
+        <div className="bg-gradient-to-br from-primary-500 to-primary-600 p-6 sm:p-8 text-white text-center">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-3xl sm:text-4xl">📧</span>
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold">Almost Done!</h3>
+          <p className="text-white/90 mt-2">Get your personalized treatment plan</p>
+        </div>
+        
+        <form onSubmit={handleContactSubmit} className="p-6 sm:p-8 space-y-4">
+          <p className="text-center text-neutral-600 mb-6">
+            Enter your details to receive your customized PRP recommendation and special pricing
+          </p>
+          
+          <div>
+            <label className="block text-sm font-medium text-neutral-700 mb-2">
+              Your Name
+            </label>
+            <input
+              type="text"
+              required
+              value={contactInfo.name}
+              onChange={(e) => setContactInfo({...contactInfo, name: e.target.value})}
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              placeholder="John Smith"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-neutral-700 mb-2">
+              Email Address
+            </label>
+            <input
+              type="email"
+              required
+              value={contactInfo.email}
+              onChange={(e) => setContactInfo({...contactInfo, email: e.target.value})}
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              placeholder="john@example.com"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-neutral-700 mb-2">
+              Phone Number (Optional)
+            </label>
+            <input
+              type="tel"
+              value={contactInfo.phone}
+              onChange={(e) => setContactInfo({...contactInfo, phone: e.target.value})}
+              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              placeholder="07XXX XXXXXX"
+            />
+          </div>
+          
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
+          >
+            Get My Personalized Plan →
+          </button>
+          
+          <p className="text-xs text-neutral-500 text-center mt-4">
+            Your information is secure and will only be used to contact you about your PRP consultation.
+            We never share your details.
+          </p>
+        </form>
+      </div>
+    );
+  }
 
   if (showResult) {
     const recommendation = getRecommendation();
@@ -210,7 +301,7 @@ export default function PRPAssessment() {
                 FacebookEvents.Lead(30); // Higher value for completed assessment
                 setShowBookingModal(true);
                 
-                // Also send to GHL when they click book (in case first webhook failed)
+                // Also send to GHL when they click book with contact info
                 try {
                   await fetch('/api/ghl-webhook', {
                     method: 'POST',
@@ -218,11 +309,13 @@ export default function PRPAssessment() {
                       'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
+                      name: contactInfo.name,
+                      email: contactInfo.email,
+                      phone: contactInfo.phone,
                       treatment: recommendation.treatment,
                       assessmentData: answers,
                       recommendedPackage: recommendation.sessions,
-                      recommendedPrice: recommendation.price,
-                      // Note: email/phone will be captured in the GHL calendar widget
+                      recommendedPrice: recommendation.price
                     })
                   });
                 } catch (error) {
