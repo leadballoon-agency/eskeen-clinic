@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
-import Script from 'next/script';
 
 interface GHLBookingModalProps {
   isOpen: boolean;
@@ -13,20 +12,31 @@ interface GHLBookingModalProps {
 export default function GHLBookingModal({ isOpen, onClose, treatment = 'PRP Hair Consultation' }: GHLBookingModalProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [showFallback, setShowFallback] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
+      // Reset states when modal opens
+      setIsLoading(true);
+      setShowFallback(false);
+      setIframeLoaded(false);
+      
       // Track modal open
       FacebookEvents.InteractWithTool('GHL Calendar', 'Modal Opened');
       
-      // Set a timeout to show fallback if iframe doesn't load
+      // Only show fallback if iframe hasn't loaded after 15 seconds
+      // This is a safety net - the iframe onError should trigger first if there's a real issue
       const timer = setTimeout(() => {
-        setShowFallback(true);
-      }, 5000); // Show fallback after 5 seconds
+        if (!iframeLoaded && isLoading) {
+          console.log('Calendar loading timeout - showing fallback');
+          setShowFallback(true);
+          setIsLoading(false);
+        }
+      }, 15000); // 15 seconds should be enough for any network
       
       return () => clearTimeout(timer);
     }
-  }, [isOpen]);
+  }, [isOpen]); // Remove iframeLoaded from dependencies to prevent timer reset
 
   if (!isOpen) return null;
 
@@ -57,15 +67,6 @@ export default function GHLBookingModal({ isOpen, onClose, treatment = 'PRP Hair
         
         {/* GHL Iframe Container */}
         <div className="p-4 overflow-y-auto" style={{ maxHeight: 'calc(90vh - 120px)' }}>
-          {isLoading && !showFallback && (
-            <div className="flex items-center justify-center py-12">
-              <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-primary-500 border-t-transparent mx-auto mb-4"></div>
-                <p className="text-neutral-600">Loading calendar...</p>
-              </div>
-            </div>
-          )}
-          
           {showFallback ? (
             <div className="text-center py-12">
               <div className="text-5xl mb-4">📞</div>
@@ -89,19 +90,43 @@ export default function GHLBookingModal({ isOpen, onClose, treatment = 'PRP Hair
               </p>
             </div>
           ) : (
-            <iframe 
-              src="https://link.leadballoon.co.uk/widget/booking/2WlYIajUfZGnWIZR7KXH" 
-              style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} 
-              scrolling="no" 
-              id="2WlYIajUfZGnWIZR7KXH_1756690961157"
-              onLoad={() => setIsLoading(false)}
-            />
+            <>
+              {/* Loading indicator */}
+              {isLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+                    <p className="text-neutral-600">Loading calendar...</p>
+                  </div>
+                </div>
+              )}
+              
+              <iframe 
+                src="https://link.leadballoon.co.uk/widget/booking/2WlYIajUfZGnWIZR7KXH" 
+                style={{ 
+                  width: '100%', 
+                  border: 'none', 
+                  overflow: 'hidden', 
+                  minHeight: '600px',
+                  display: isLoading ? 'none' : 'block'
+                }} 
+                scrolling="no" 
+                id="ghl-calendar-iframe"
+                title="Book Your Consultation"
+                allow="payment"
+                onLoad={() => {
+                  console.log('GHL Calendar iframe loaded successfully');
+                  setIsLoading(false);
+                  setIframeLoaded(true);
+                }}
+                onError={() => {
+                  console.error('Failed to load GHL calendar');
+                  setShowFallback(true);
+                  setIsLoading(false);
+                }}
+              />
+            </>
           )}
-          
-          <Script 
-            src="https://link.leadballoon.co.uk/js/form_embed.js" 
-            strategy="afterInteractive"
-          />
           
           {/* Alternative CTA */}
           {!showFallback && (
