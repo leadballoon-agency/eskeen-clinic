@@ -164,10 +164,13 @@ export default function PRPAssessment() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Log to verify we have the data
+    console.log('Submitting contact info:', contactInfo);
+    
     // Send to GHL with contact info
     const recommendation = getRecommendationData(answers);
     try {
-      await fetch('/api/ghl-webhook', {
+      const response = await fetch('/api/ghl-webhook', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -182,11 +185,12 @@ export default function PRPAssessment() {
           recommendedPrice: recommendation.price
         })
       });
+      console.log('Webhook response:', response.status);
     } catch (error) {
       console.error('Failed to send assessment to GHL:', error);
     }
     
-    // Show results
+    // Show results - KEEP contact info, don't reset!
     setShowContactForm(false);
     setShowResult(true);
   };
@@ -299,31 +303,11 @@ export default function PRPAssessment() {
 
           <div className="space-y-3">
             <button
-              onClick={async () => {
+              onClick={() => {
                 FacebookEvents.ClickBookNow(recommendation.treatment, 'PRP Assessment Result');
                 FacebookEvents.Lead(30); // Higher value for completed assessment
                 setShowBookingModal(true);
-                
-                // Also send to GHL when they click book with contact info
-                try {
-                  await fetch('/api/ghl-webhook', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                      name: contactInfo.name,
-                      email: contactInfo.email,
-                      phone: contactInfo.phone,
-                      treatment: recommendation.treatment,
-                      assessmentData: answers,
-                      recommendedPackage: recommendation.sessions,
-                      recommendedPrice: recommendation.price
-                    })
-                  });
-                } catch (error) {
-                  console.error('Failed to update GHL:', error);
-                }
+                // Webhook already sent when contact form was submitted
               }}
               className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-100 text-center"
             >
