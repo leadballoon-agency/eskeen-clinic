@@ -164,28 +164,50 @@ export default function PRPAssessment() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate we have all required fields
+    if (!contactInfo.name || !contactInfo.email || !contactInfo.phone) {
+      console.error('Missing required contact information:', {
+        hasName: !!contactInfo.name,
+        hasEmail: !!contactInfo.email,
+        hasPhone: !!contactInfo.phone
+      });
+      alert('Please fill in all required fields');
+      return;
+    }
+    
     // Log to verify we have the data
-    console.log('Submitting contact info:', contactInfo);
+    console.log('=== CONTACT FORM SUBMISSION ===');
+    console.log('Contact info state:', contactInfo);
+    console.log('Name:', contactInfo.name);
+    console.log('Email:', contactInfo.email);
+    console.log('Phone:', contactInfo.phone);
     
     // Send to GHL with contact info
     const recommendation = getRecommendationData(answers);
+    
+    const webhookData = {
+      name: contactInfo.name,
+      email: contactInfo.email,
+      phone: contactInfo.phone,
+      treatment: recommendation.treatment,
+      assessmentData: answers,
+      recommendedPackage: recommendation.sessions,
+      recommendedPrice: recommendation.price
+    };
+    
+    console.log('Data being sent to webhook:', webhookData);
+    
     try {
       const response = await fetch('/api/ghl-webhook', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          name: contactInfo.name,
-          email: contactInfo.email,
-          phone: contactInfo.phone,
-          treatment: recommendation.treatment,
-          assessmentData: answers,
-          recommendedPackage: recommendation.sessions,
-          recommendedPrice: recommendation.price
-        })
+        body: JSON.stringify(webhookData)
       });
-      console.log('Webhook response:', response.status);
+      
+      const responseData = await response.json();
+      console.log('Webhook response:', response.status, responseData);
     } catch (error) {
       console.error('Failed to send assessment to GHL:', error);
     }

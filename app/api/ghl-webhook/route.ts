@@ -5,6 +5,10 @@ export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
     
+    // Log incoming data for debugging
+    console.log('=== INCOMING WEBHOOK DATA ===');
+    console.log('Full request data:', JSON.stringify(data, null, 2));
+    
     // Extract assessment data
     const { 
       email, 
@@ -15,6 +19,12 @@ export async function POST(req: NextRequest) {
       recommendedPackage,
       recommendedPrice
     } = data;
+    
+    // Log extracted values
+    console.log('Extracted values:');
+    console.log('- Name:', name);
+    console.log('- Email:', email);
+    console.log('- Phone:', phone);
 
     // Format assessment notes for GHL - clean and readable
     const concernLabels: Record<string, string> = {
@@ -93,7 +103,14 @@ Ready to book: ${commitmentLabels[assessmentData.commitment] || assessmentData.c
     };
 
     // Log what we're sending for debugging
-    console.log('Sending to GHL webhook:', webhookPayload);
+    console.log('=== SENDING TO GHL WEBHOOK ===');
+    console.log('Webhook URL:', GHL_WEBHOOK_URL);
+    console.log('Payload being sent:', JSON.stringify(webhookPayload, null, 2));
+    console.log('Key fields check:');
+    console.log('- email:', webhookPayload.email);
+    console.log('- phone:', webhookPayload.phone);
+    console.log('- firstName:', webhookPayload.firstName);
+    console.log('- lastName:', webhookPayload.lastName);
     
     const response = await fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
