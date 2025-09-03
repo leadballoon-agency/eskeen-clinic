@@ -49,12 +49,17 @@ export async function POST(req: NextRequest) {
     const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/USJbaW3fRzevnqAcsm2W/webhook-trigger/12c77706-d501-4c79-b819-7457febbf635';
     
     const webhookPayload = {
-      // Contact Info
+      // Contact Info - Try multiple formats for GHL compatibility
       email: email || '',
       phone: phone || '',
       firstName: name?.split(' ')[0] || '',
       lastName: name?.split(' ').slice(1).join(' ') || '',
-      fullName: name || '',  // Also send full name just in case
+      first_name: name?.split(' ')[0] || '',  // Underscore version
+      last_name: name?.split(' ').slice(1).join(' ') || '',  // Underscore version
+      contact_email: email || '',  // Alternative field name
+      contact_phone: phone || '',  // Alternative field name
+      fullName: name || '',
+      name: name || '',  // Simple name field
       
       // Assessment Results
       treatment: treatment,
@@ -87,6 +92,9 @@ Previous: ${triedLabels[assessmentData.tried] || assessmentData.tried}
 Ready to book: ${commitmentLabels[assessmentData.commitment] || assessmentData.commitment}`
     };
 
+    // Log what we're sending for debugging
+    console.log('Sending to GHL webhook:', webhookPayload);
+    
     const response = await fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
       headers: {
