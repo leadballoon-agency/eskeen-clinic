@@ -224,14 +224,21 @@ export default function PRPAssessment() {
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl sm:text-4xl">📧</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-bold">Almost Done!</h3>
-          <p className="text-white/90 mt-2">Get your personalized treatment plan</p>
+          <h3 className="text-2xl sm:text-3xl font-bold">Your Results Are Ready!</h3>
+          <p className="text-white/90 mt-2">One last step to see your personalized treatment plan</p>
         </div>
         
         <form onSubmit={handleContactSubmit} className="p-6 sm:p-8 space-y-4">
-          <p className="text-center text-neutral-600 mb-6">
-            Enter your details to receive your customized PRP recommendation and special pricing
-          </p>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-6">
+            <p className="text-sm text-green-800 font-medium text-center">
+              ✅ Your assessment is complete! Enter your details below to instantly receive:
+            </p>
+            <ul className="text-xs text-green-700 mt-2 space-y-1">
+              <li>• Your personalized treatment recommendation</li>
+              <li>• Special assessment-only pricing (saves £50+)</li>
+              <li>• Priority booking with Kerry</li>
+            </ul>
+          </div>
           
           <div>
             <label className="block text-sm font-medium text-neutral-700 mb-2">
@@ -276,14 +283,13 @@ export default function PRPAssessment() {
           
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
+            className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-100 animate-pulse"
           >
-            Get My Personalized Plan →
+            Show My Results Now →
           </button>
           
           <p className="text-xs text-neutral-500 text-center mt-4">
-            Your information is secure and will only be used to contact you about your PRP consultation.
-            We never share your details.
+            🔒 Your information is 100% secure. We'll only use it to send your personalized results and book your consultation.
           </p>
         </form>
       </div>
