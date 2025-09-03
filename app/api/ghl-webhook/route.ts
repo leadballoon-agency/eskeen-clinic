@@ -54,6 +54,7 @@ export async function POST(req: NextRequest) {
       phone: phone || '',
       firstName: name?.split(' ')[0] || '',
       lastName: name?.split(' ').slice(1).join(' ') || '',
+      fullName: name || '',  // Also send full name just in case
       
       // Assessment Results
       treatment: treatment,

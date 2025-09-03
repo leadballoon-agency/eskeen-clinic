@@ -380,6 +380,13 @@ export default function PRPAssessment() {
           assessmentScore={85} 
           treatment={recommendation.treatment}
         />
+        
+        {/* Booking Modal */}
+        <GHLBookingModal 
+          isOpen={showBookingModal}
+          onClose={() => setShowBookingModal(false)}
+          treatment={recommendation.treatment}
+        />
       </div>
     );
   }
@@ -447,12 +454,6 @@ export default function PRPAssessment() {
           )}
         </div>
       </div>
-
-      <GHLBookingModal 
-        isOpen={showBookingModal}
-        onClose={() => setShowBookingModal(false)}
-        treatment="PRP Hair Consultation"
-      />
     </div>
   );
 }
