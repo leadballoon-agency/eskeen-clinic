@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Force dynamic rendering - no caching
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // GHL webhook endpoint to update contact with assessment data
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
     
-    // Log incoming data for debugging
+    // Log incoming data for debugging with current timestamp
+    const currentTime = new Date();
     console.log('=== INCOMING WEBHOOK DATA ===');
+    console.log('Current server time:', currentTime.toISOString());
+    console.log('Readable time:', currentTime.toLocaleString('en-GB', { timeZone: 'Europe/London' }));
     console.log('Full request data:', JSON.stringify(data, null, 2));
     
     // Extract assessment data
@@ -88,12 +95,13 @@ export async function POST(req: NextRequest) {
       triedValue: assessmentData.tried,
       commitmentValue: assessmentData.commitment,
       
-      // Metadata
+      // Metadata with fresh timestamp
       source: 'PRP Assessment Tool',
-      assessmentDate: new Date().toISOString(),
+      assessmentDate: currentTime.toISOString(),
+      assessmentTimestamp: Date.now(),
       
-      // Notes for Kerry
-      notes: `PRP Assessment completed on ${new Date().toLocaleDateString()}
+      // Notes for Kerry with current UK date/time
+      notes: `PRP Assessment completed on ${currentTime.toLocaleString('en-GB', { timeZone: 'Europe/London' })}
 Treatment: ${treatment}
 Recommended: ${recommendedPackage} - ${recommendedPrice}
 Concern: ${concernLabels[assessmentData.concern] || assessmentData.concern}
@@ -132,7 +140,14 @@ Ready to book: ${commitmentLabels[assessmentData.commitment] || assessmentData.c
 
     return NextResponse.json({ 
       success: true, 
-      message: 'Assessment data sent to GHL'
+      message: 'Assessment data sent to GHL',
+      timestamp: currentTime.toISOString()
+    }, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
     });
 
   } catch (error) {

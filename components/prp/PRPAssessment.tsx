@@ -192,7 +192,9 @@ export default function PRPAssessment() {
       treatment: recommendation.treatment,
       assessmentData: answers,
       recommendedPackage: recommendation.sessions,
-      recommendedPrice: recommendation.price
+      recommendedPrice: recommendation.price,
+      submittedAt: new Date().toISOString(),
+      timestamp: Date.now()
     };
     
     console.log('Data being sent to webhook:', webhookData);
