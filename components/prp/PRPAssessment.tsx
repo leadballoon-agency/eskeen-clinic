@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { FacebookEvents } from '@/lib/facebook-events';
 import GHLBookingModal from '@/components/GHLBookingModal';
-import SLOOffer from '@/components/SLOOffer';
+// import SLOOffer from '@/components/SLOOffer'; // Disabled until Stripe setup
 
 export default function PRPAssessment() {
   const [step, setStep] = useState(0);
@@ -375,11 +375,11 @@ export default function PRPAssessment() {
           </p>
         </div>
 
-        {/* SLO Offer for those not ready to book */}
-        <SLOOffer 
+        {/* SLO Offer - Disabled until Stripe setup and offer approved */}
+        {/* <SLOOffer 
           assessmentScore={85} 
           treatment={recommendation.treatment}
-        />
+        /> */}
         
         {/* Booking Modal */}
         <GHLBookingModal 
