@@ -175,12 +175,8 @@ export default function PRPAssessment() {
       return;
     }
     
-    // Log to verify we have the data
-    console.log('=== CONTACT FORM SUBMISSION ===');
-    console.log('Contact info state:', contactInfo);
-    console.log('Name:', contactInfo.name);
-    console.log('Email:', contactInfo.email);
-    console.log('Phone:', contactInfo.phone);
+    // Simple tracking log
+    console.log(`Assessment submitted by ${contactInfo.name}`);
     
     // Send to GHL with contact info
     const recommendation = getRecommendationData(answers);
@@ -197,7 +193,6 @@ export default function PRPAssessment() {
       timestamp: Date.now()
     };
     
-    console.log('Data being sent to webhook:', webhookData);
     
     try {
       const response = await fetch('/api/ghl-webhook', {
@@ -208,8 +203,9 @@ export default function PRPAssessment() {
         body: JSON.stringify(webhookData)
       });
       
-      const responseData = await response.json();
-      console.log('Webhook response:', response.status, responseData);
+      if (response.ok) {
+        console.log('Lead successfully sent to GHL');
+      }
     } catch (error) {
       console.error('Failed to send assessment to GHL:', error);
     }

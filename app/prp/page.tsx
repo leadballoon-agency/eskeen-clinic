@@ -19,6 +19,9 @@ export default function PRPPage() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Scroll to top on page load/refresh
+    window.scrollTo(0, 0);
+    
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };

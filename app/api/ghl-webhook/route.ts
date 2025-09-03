@@ -9,12 +9,8 @@ export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
     
-    // Log incoming data for debugging with current timestamp
+    // Get current timestamp
     const currentTime = new Date();
-    console.log('=== INCOMING WEBHOOK DATA ===');
-    console.log('Current server time:', currentTime.toISOString());
-    console.log('Readable time:', currentTime.toLocaleString('en-GB', { timeZone: 'Europe/London' }));
-    console.log('Full request data:', JSON.stringify(data, null, 2));
     
     // Extract assessment data
     const { 
@@ -27,11 +23,8 @@ export async function POST(req: NextRequest) {
       recommendedPrice
     } = data;
     
-    // Log extracted values
-    console.log('Extracted values:');
-    console.log('- Name:', name);
-    console.log('- Email:', email);
-    console.log('- Phone:', phone);
+    // Simple log for tracking
+    console.log(`New PRP assessment from ${name} (${email}) at ${currentTime.toLocaleString('en-GB', { timeZone: 'Europe/London' })}`);
 
     // Format assessment notes for GHL - clean and readable
     const concernLabels: Record<string, string> = {
@@ -66,17 +59,12 @@ export async function POST(req: NextRequest) {
     const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/USJbaW3fRzevnqAcsm2W/webhook-trigger/12c77706-d501-4c79-b819-7457febbf635';
     
     const webhookPayload = {
-      // Contact Info - Try multiple formats for GHL compatibility
+      // Contact Info - Clean format
       email: email || '',
       phone: phone || '',
       firstName: name?.split(' ')[0] || '',
       lastName: name?.split(' ').slice(1).join(' ') || '',
-      first_name: name?.split(' ')[0] || '',  // Underscore version
-      last_name: name?.split(' ').slice(1).join(' ') || '',  // Underscore version
-      contact_email: email || '',  // Alternative field name
-      contact_phone: phone || '',  // Alternative field name
       fullName: name || '',
-      name: name || '',  // Simple name field
       
       // Assessment Results
       treatment: treatment,
@@ -110,15 +98,8 @@ Previous: ${triedLabels[assessmentData.tried] || assessmentData.tried}
 Ready to book: ${commitmentLabels[assessmentData.commitment] || assessmentData.commitment}`
     };
 
-    // Log what we're sending for debugging
-    console.log('=== SENDING TO GHL WEBHOOK ===');
-    console.log('Webhook URL:', GHL_WEBHOOK_URL);
-    console.log('Payload being sent:', JSON.stringify(webhookPayload, null, 2));
-    console.log('Key fields check:');
-    console.log('- email:', webhookPayload.email);
-    console.log('- phone:', webhookPayload.phone);
-    console.log('- firstName:', webhookPayload.firstName);
-    console.log('- lastName:', webhookPayload.lastName);
+    // Simple log for tracking
+    console.log(`Sending to GHL: ${webhookPayload.firstName} ${webhookPayload.lastName} - ${webhookPayload.treatment}`);
     
     const response = await fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
