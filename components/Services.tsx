@@ -116,7 +116,7 @@ export default function Services() {
               }`}
               onClick={() => {
                 setActiveService(service.id);
-                FacebookEvents.ViewContent(`${service.title} Service`, 'Service Card');
+                // Don't track service card clicks - causes event spam
               }}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 rounded-2xl sm:rounded-3xl transition-opacity group-hover:opacity-10`}></div>

@@ -24,30 +24,30 @@ export default function ScrollTracker() {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (window.scrollY / scrollHeight) * 100;
         
-        // Track scroll depth milestones
+        // Track scroll depth milestones with CUSTOM events, not ViewContent!
         if (scrollPercent >= 25 && !milestones[25]) {
-          FacebookEvents.ViewContent('Scroll Depth 25%', 'Engagement');
+          FacebookEvents.ScrollDepth(25);
           setMilestones(prev => ({ ...prev, 25: true }));
         }
         
         if (scrollPercent >= 50 && !milestones[50]) {
-          FacebookEvents.ViewContent('Scroll Depth 50%', 'Engagement');
+          FacebookEvents.ScrollDepth(50);
           setMilestones(prev => ({ ...prev, 50: true }));
         }
         
         if (scrollPercent >= 75 && !milestones[75]) {
-          FacebookEvents.ViewContent('Scroll Depth 75%', 'Engagement');
+          FacebookEvents.ScrollDepth(75);
           setMilestones(prev => ({ ...prev, 75: true }));
         }
         
         if (scrollPercent >= 90 && !milestones[90]) {
-          FacebookEvents.ViewContent('Scroll Depth 90%', 'Engagement');
+          FacebookEvents.ScrollDepth(90);
           setMilestones(prev => ({ ...prev, 90: true }));
           
           // Track high engagement when user scrolls to 90%
           const timeOnPage = Math.round((Date.now() - timeOnPageRef.current) / 1000);
           if (timeOnPage > 30 && !hasTrackedEngagementRef.current) {
-            FacebookEvents.ViewContent('High Engagement User', 'Engagement');
+            FacebookEvents.HighEngagementUser();
             hasTrackedEngagementRef.current = true;
           }
         }
@@ -58,29 +58,17 @@ export default function ScrollTracker() {
     const engagementTimer = setTimeout(() => {
       const timeOnPage = Math.round((Date.now() - timeOnPageRef.current) / 1000);
       if (timeOnPage >= 60 && !hasTrackedEngagementRef.current) {
-        FacebookEvents.ViewContent('Engaged User (60s+)', 'Engagement');
+        FacebookEvents.EngageWithContent('60+ seconds on page');
       }
     }, 60000);
     
     window.addEventListener('scroll', handleScroll);
     
-    // Track page visibility changes
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        const timeOnPage = Math.round((Date.now() - timeOnPageRef.current) / 1000);
-        if (timeOnPage > 10) {
-          FacebookEvents.ViewContent('Page Hidden', 'Engagement');
-        }
-      } else {
-        FacebookEvents.ViewContent('Page Visible', 'Engagement');
-      }
-    };
-    
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    // Remove visibility tracking - this was causing spam!
+    // Every tab switch was firing ViewContent events
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearTimeout(scrollTimeout);
       clearTimeout(engagementTimer);
     };

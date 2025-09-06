@@ -57,7 +57,7 @@ export default function Navigation({ scrolled, darkMode = false }: NavigationPro
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => FacebookEvents.ViewContent(`Navigation: ${link.label}`, 'Menu Click')}
+                onClick={() => FacebookEvents.ClickBookNow(`Navigation: ${link.label}`)}
                 className={`${textColor} ${hoverColor} transition-colors font-medium`}
               >
                 {link.label}
