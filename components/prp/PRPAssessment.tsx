@@ -108,7 +108,7 @@ export default function PRPAssessment() {
       const commitment = newAnswers.commitment;
       
       // Track reaching contact form (not completion!)
-      FacebookEvents.ViewPricing(); // Use existing event to track form views
+      FacebookEvents.ViewPricing('PRP Assessment Contact Form'); // Track form views
       
       // Store lead value for later use
       let leadValue = 20; // base value for completion

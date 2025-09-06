@@ -47,7 +47,7 @@ export default function ScrollTracker() {
           // Track high engagement when user scrolls to 90%
           const timeOnPage = Math.round((Date.now() - timeOnPageRef.current) / 1000);
           if (timeOnPage > 30 && !hasTrackedEngagementRef.current) {
-            FacebookEvents.HighEngagementUser();
+            FacebookEvents.HighEngagement();
             hasTrackedEngagementRef.current = true;
           }
         }
@@ -58,7 +58,7 @@ export default function ScrollTracker() {
     const engagementTimer = setTimeout(() => {
       const timeOnPage = Math.round((Date.now() - timeOnPageRef.current) / 1000);
       if (timeOnPage >= 60 && !hasTrackedEngagementRef.current) {
-        FacebookEvents.EngageWithContent('60+ seconds on page');
+        FacebookEvents.EngageWithContent('Time on page', 60);
       }
     }, 60000);
     
