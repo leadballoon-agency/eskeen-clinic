@@ -103,22 +103,23 @@ export default function PRPAssessment() {
       // After last question, show contact form instead of results
       setShowContactForm(true);
       
-      // Track assessment completion
+      // Track that they reached the contact form
       const concern = newAnswers.concern;
       const commitment = newAnswers.commitment;
       
-      // Track completion with moderate value for learning phase
+      // Track reaching contact form (not completion!)
+      FacebookEvents.ViewPricing(); // Use existing event to track form views
+      
+      // Store lead value for later use
       let leadValue = 20; // base value for completion
       if (commitment === 'package3') leadValue = 30;
       else if (commitment === 'package6') leadValue = 40;
       
-      // Track completion (we'll use actual prices later after learning phase)
-      FacebookEvents.CompleteAssessment('PRP Therapy', concern, leadValue);
+      // Store for use after contact form submission
+      sessionStorage.setItem('leadValue', leadValue.toString());
+      sessionStorage.setItem('concern', concern);
       
-      // Always track as lead for volume
-      FacebookEvents.Lead(leadValue);
-      
-      // Don't send to GHL yet - wait for contact info
+      // Don't fire CompleteAssessment here - only after contact form!
     }
   };
 
@@ -177,6 +178,14 @@ export default function PRPAssessment() {
     
     // Simple tracking log
     console.log(`Assessment submitted by ${contactInfo.name}`);
+    
+    // NOW fire CompleteAssessment - after we have contact info!
+    const leadValue = parseInt(sessionStorage.getItem('leadValue') || '20');
+    const concern = sessionStorage.getItem('concern') || answers.concern;
+    
+    // Track REAL completion with contact info
+    FacebookEvents.CompleteAssessment('PRP Therapy', concern, leadValue);
+    FacebookEvents.Lead(leadValue);
     
     // Send to GHL with contact info
     const recommendation = getRecommendationData(answers);
