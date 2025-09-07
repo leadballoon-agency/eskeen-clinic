@@ -57,11 +57,12 @@ function PRPAdvertorialContent() {
   }, [readingProgress, timeOnPage]);
 
   const handleCTAClick = (location: string) => {
+    // Track assessment start - THIS IS CRITICAL!
+    FacebookEvents.StartAssessment('PRP Therapy');
+    // Also track the click location for analysis
     FacebookEvents.ClickBookNow(`PRP Advertorial - ${location} - ${source}`, 'Advertorial CTA');
-    // Track as lead with moderate value - they clicked through to assessment
-    FacebookEvents.Lead(15);
-    // Navigate to PRP page
-    router.push('/prp');
+    // Navigate DIRECTLY to assessment section on PRP page
+    router.push('/prp#assessment');
   };
 
   // Dynamic openings based on ad source
